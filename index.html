@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minecraft</title>
+  <link rel="preconnect" href="https://raw.githubusercontent.com">
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <style>
+    html,body{margin:0;height:100%;overflow:hidden;background:#ef313d;font-family:Minecraftia,monospace;text-align:center}
+    .mc-button{image-rendering:pixelated;border-image-source:var(--btn-bg);border-image-slice:3 fill;border-width:6px;border-image-repeat:stretch;background:transparent;color:#fff;font-family:Minecraftia,monospace;font-size:18px;padding:0 24px;width:100%;height:50px;cursor:pointer;text-shadow:2px 2px #3F3F3F;word-break:break-all;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+    .mc-button:hover{border-image-source:var(--btn-bg-hover)}
+    footer p{margin:5px}
+    progress::-webkit-progress-bar{background:transparent}
+    progress::-webkit-progress-value{background:#fff}
+    progress::-moz-progress-bar{background:#fff}
+    @keyframes splash-pulse{from{transform:rotate(-20deg) scale(1)}to{transform:rotate(-20deg) scale(1.15)}}
+    @keyframes fadeOut{to{opacity:0;visibility:hidden}}
+    @keyframes fadeIn{0%{opacity:0}to{opacity:1;visibility:visible}}
+    .hide{animation:fadeOut 1s linear forwards}
+    .show{animation:fadeIn 1s linear forwards}
+  </style>
+</head>
+<body>
+
+<canvas id="panorama" style="position:fixed;inset:0;width:100%;height:100%;display:block"></canvas>
+
+<div id="ui" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;user-select:none;font-weight:100;margin:0;-webkit-font-smoothing:none;font-smooth:never;-moz-osx-font-smoothing:grayscale">
+  <div id="title-container" style="position:relative;width:clamp(220px,60vw,600px);margin-top:8vh;margin-bottom:15vh">
+    <img id="title" alt="Minecraft" draggable="false" style="width:100%;height:auto;display:block;-webkit-user-drag:none">
+    <p id="splash-text" style="position:absolute;right:-2%;bottom:-5%;font-size:clamp(10px,2.5vw,24px);transform-origin:center;animation:splash-pulse .4s infinite alternate ease-in-out;white-space:nowrap;z-index:10;color:#FFFF55;text-shadow:3px 3px #3F3F15">Hello!</p>
+  </div>
+
+  <div style="width:90%;max-width:500px;display:flex;flex-direction:column;gap:10px">
+    <button class="mc-button">Flowchart</button>
+    <button class="mc-button">Codes</button>
+    <button class="mc-button">About Me</button>
+    <div style="margin-top:20px;display:flex;gap:10px">
+      <button class="mc-button">Options...</button>
+      <button class="mc-button" id="quit">Quit Game</button>
+    </div>
+  </div>
+
+  <footer style="display:flex;position:absolute;bottom:0;width:100%;color:#fff;text-shadow:2px 2px #3F3F3F;justify-content:space-between">
+    <p>© 2026-2027 DIT 1-1</p>
+    <p>PUP Iskolar ng Bayan</p>
+  </footer>
+</div>
+
+<div id="splash" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#ef313d;color:#fff;z-index:99999">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 702.4 240" style="width:50%;height:auto;fill:#fff;margin-bottom:6.7%">
+    <g>
+      <path transform="translate(40 140)" d="M20 0V-10Q20-14.1 17-17 14.1-20 10-20H0V-80H20V-25Q20-22.9 21.4-21.4 22.9-20 25-20H80V0Z"/>
+      <path transform="translate(133.2 140)" d="M0 0V-80H20V0Z"/>
+      <path id="a" transform="translate(166.4 140)" d="M0 0V-40Q0-56.5 11.7-68.2 23.4-80 40-80H60V-70Q60-65.9 62.9-62.9 65.9-60 70-60H80V0H60V-15Q60-17 58.5-18.5 57-20 55-20H30V-40H55Q57-40 58.5-41.4 60-42.9 60-45V-55Q60-57 58.5-58.5 57-60 55-60H40Q31.7-60 25.9-54.1 20-48.2 20-40V0Z"/>
+      <path transform="translate(259.6 140)" d="M0 0V-80H70V-70Q70-65.9 72.9-62.9 75.9-60 80-60H90V0H70V-55Q70-57 68.5-58.5 67-60 65-60H60Q57.9-60 56.4-58.5 55-57 55-55V-20H35V-55Q35-57 33.5-58.5 32-60 30-60H25Q22.9-60 21.4-58.5 20-57 20-55V0Z"/>
+      <use href="#a" x="219.6"/>
+      <path transform="translate(479.2 140)" d="M0 0V-80H60V-70Q60-65.9 62.9-62.9 65.9-60 70-60H80V0H60V-55Q60-57 58.5-58.5 57-60 55-60H20V0Z"/>
+      <path transform="translate(572.4 140)" d="M40 0Q23.4 0 11.7-11.7 0-23.4 0-40 0-56.5 11.7-68.2 23.4-80 40-80H80V-60H40Q31.7-60 25.9-54.1 20-48.2 20-40 20-31.7 25.9-25.9 29.5-22.2 34.1-20.8 35.7-21.6 37-22.9 40-25.9 40-30V-40H80V0H60V-15Q60-17 58.5-18.5 57-20 55-20H45Q42.9-20 41.4-18.5 40-17 40-15Z"/>
+    </g>
+    <g>
+      <path transform="translate(304.88 194.77)" d="M1.3 0V-17H7.4Q11.4-17 13.8-14.7 16.2-12.3 16.2-8.5 16.2-4.7 13.9-2.3 11.6 0 7.5 0ZM5.7-4.1H7.2Q9.1-4.1 10.3-5.3 11.5-6.6 11.5-8.5 11.5-10.4 10.3-11.7 9.2-13 7.5-13H5.7Z"/>
+      <path transform="translate(325.05 194.77)" d="M1.4 0V-17H6V0Z"/>
+      <path transform="translate(335.62 194.77)" d="M4.8 0V-13H0.4V-17H13.6V-13H9.3V0Z"/>
+      <path id="one" transform="translate(361.53 194.77)" d="M4.3 0V-11.1L2.1-9.4 0-12.7 5.3-16.5H8.9V0Z"/>
+      <path transform="translate(375.05 194.77)" d="M0.8-5.5V-9.3H8.2V-5.5Z"/>
+      <use href="#one" x="25.67"/>
+    </g>
+  </svg>
+  <progress id="progress" max="100" value="0" style="width:50%;height:25px;border:solid 3px white;border-radius:0;padding:2px;background:transparent"></progress>
+  <p id="click-prompt" style="position:absolute;bottom:0;visibility:hidden">Click anywhere to start</p>
+</div>
+
+<script type="module">
+import * as THREE from "https://unpkg.com/three@0.160.0/build/three.module.js";
+
+const assetsPrefix = "https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/refs/heads/26.1/assets/minecraft/";
+const staticPrefix = "https://raw.githubusercontent.com/LiamAng/Static/refs/heads/main/";
+
+const assets = {
+  images: {
+    title: staticPrefix + "minecraft_title.png",
+    button: assetsPrefix + "textures/gui/sprites/widget/button.png",
+    button_highlight: assetsPrefix + "textures/gui/sprites/widget/button_highlighted.png",
+    panorama: [3, 1, 4, 5, 0, 2].map(i => `${assetsPrefix}textures/gui/title/background/panorama_${i}.png`)
+  },
+  fonts: { minecraftia: staticPrefix + "minecraft.ttf" },
+  audio: {
+    menu_music: staticPrefix + "beginning_2.opus",
+    click: staticPrefix + "random_click.opus"
+  }
+};
+
+const countAssets = node =>
+  typeof node === "string" ? 1 :
+  Array.isArray(node) ? node.length :
+  Object.values(node).reduce((sum, child) => sum + countAssets(child), 0);
+
+const TOTAL_ASSETS = countAssets(assets);
+
+const splash = document.getElementById("splash");
+const bar = document.getElementById("progress");
+const clickPrompt = document.getElementById("click-prompt");
+const titleImg = document.getElementById("title");
+
+let done = 0, loaded = false, started = false;
+const step = () => { if (++done >= TOTAL_ASSETS) loaded = true; };
+const track = (el, loadEvent = "load") => {
+  el.addEventListener(loadEvent, step, { once: true });
+  el.addEventListener("error", step, { once: true });
+  return el;
+};
+
+const menuMusic = track(new Audio(assets.audio.menu_music), "canplaythrough");
+menuMusic.loop = true;
+menuMusic.preload = "auto";
+
+track(titleImg).src = assets.images.title;
+
+new FontFace("Minecraftia", `url("${assets.fonts.minecraftia}")`)
+  .load().then(font => document.fonts.add(font)).catch(() => {}).finally(step);
+
+function loadButtonImage(url, cssVar) {
+  const img = new Image();
+  img.addEventListener("load", () => {
+    document.documentElement.style.setProperty(cssVar, `url("${url}")`);
+    step();
+  }, { once: true });
+  img.addEventListener("error", step, { once: true });
+  img.src = url;
+}
+loadButtonImage(assets.images.button, "--btn-bg");
+loadButtonImage(assets.images.button_highlight, "--btn-bg-hover");
+
+const ctx = new AudioContext();
+let clickBuffer = null;
+
+fetch(assets.audio.click)
+  .then(r => r.arrayBuffer())
+  .then(data => ctx.decodeAudioData(data))
+  .then(buffer => { clickBuffer = buffer; })
+  .catch(() => {})
+  .finally(step);
+
+function playClick() {
+  if (!clickBuffer) return;
+  if (ctx.state !== "running") ctx.resume().catch(() => {});
+  const src = ctx.createBufferSource();
+  src.buffer = clickBuffer;
+  src.connect(ctx.destination);
+  src.start(0);
+}
+
+const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("panorama"), antialias: true });
+const camera = new THREE.PerspectiveCamera(85, 1, 0.05, 10);
+const scene = new THREE.Scene();
+
+const loader = new THREE.TextureLoader();
+const materials = assets.images.panorama.map(url => {
+  const t = loader.load(url, step, undefined, step);
+  t.colorSpace = THREE.SRGBColorSpace;
+  t.anisotropy = renderer.capabilities.getMaxAnisotropy();
+  t.repeat.x = -1;
+  t.offset.x = 1;
+  return new THREE.MeshBasicMaterial({ map: t, side: THREE.BackSide, depthTest: false, depthWrite: false });
+});
+
+scene.add(new THREE.Mesh(new THREE.BoxGeometry(8, 8, 8), materials));
+
+const resize = () => {
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.setSize(innerWidth, innerHeight, false);
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+};
+addEventListener("resize", resize);
+resize();
+renderer.render(scene, camera);
+
+const tickBar = () => {
+  if (started) return;
+  bar.value += ((loaded ? 100 : done / TOTAL_ASSETS * 100) - bar.value) * .1;
+  if (loaded && bar.value > 99.5) {
+    bar.value = 100;
+    bar.classList.add("hide");
+    clickPrompt.classList.add("show");
+    return;
+  }
+  requestAnimationFrame(tickBar);
+};
+requestAnimationFrame(tickBar);
+
+const startPanorama = () => {
+  let prev = performance.now();
+  renderer.setAnimationLoop(now => {
+    const dt = Math.min(now - prev, 100);
+    prev = now;
+    scene.rotation.y += dt * 0.0000349;
+    renderer.render(scene, camera);
+  });
+};
+
+splash.addEventListener("click", () => {
+  if (ctx.state !== "running") ctx.resume().catch(() => {});
+  if (!loaded || started) return;
+  started = true;
+  splash.classList.add("hide");
+  menuMusic.play().catch(() => {});
+  startPanorama();
+});
+
+const pressEvent = window.PointerEvent ? "pointerdown" : "touchstart";
+document.querySelectorAll("button").forEach(b => b.addEventListener(pressEvent, playClick));
+document.getElementById("quit").addEventListener("click", () => {
+  location.href = "https://example.com";
+});
+</script>
+
+</body>
+</html>
