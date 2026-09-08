@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Minecraft</title>
-  <link rel="preconnect" href="https://raw.githubusercontent.com">
   <link rel="preconnect" href="https://unpkg.com" crossorigin>
   <style>
     html,body{margin:0;height:100%;overflow:hidden;background:#ef313d;font-family:Minecraftia,monospace;text-align:center}
@@ -75,19 +74,19 @@
 import * as THREE from "https://unpkg.com/three@0.160.0/build/three.module.js";
 
 const assetsPrefix = "https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/refs/heads/26.1/assets/minecraft/";
-const staticPrefix = "https://raw.githubusercontent.com/LiamAng/Static/refs/heads/main/";
+const staticPrefix = "/assets/";
 
 const assets = {
   images: {
-    title: staticPrefix + "minecraft_title.png",
+    title: "/assets/minecraft_title.png",
     button: assetsPrefix + "textures/gui/sprites/widget/button.png",
     button_highlight: assetsPrefix + "textures/gui/sprites/widget/button_highlighted.png",
     panorama: [3, 1, 4, 5, 0, 2].map(i => `${assetsPrefix}textures/gui/title/background/panorama_${i}.png`)
   },
-  fonts: { minecraftia: staticPrefix + "minecraft.ttf" },
+  fonts: { minecraftia: "/assets/minecraft.ttf" },
   audio: {
-    menu_music: staticPrefix + "beginning_2.opus",
-    click: staticPrefix + "random_click.opus"
+    menu_music: "/assets/beginning_2.opus",
+    click: "/assets/random_click.opus"
   }
 };
 
@@ -212,7 +211,7 @@ splash.addEventListener("click", () => {
 const pressEvent = window.PointerEvent ? "pointerdown" : "touchstart";
 document.querySelectorAll("button").forEach(b => b.addEventListener(pressEvent, playClick));
 document.getElementById("quit").addEventListener("click", () => {
-  location.href = "https://example.com";
+  location.href = "https://sites.google.com/view/ditizens/individual-projects/";
 });
 </script>
 
