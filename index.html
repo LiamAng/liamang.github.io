@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Minecraft</title>
+  <title>Liam Ang</title>
   <style>
     html,
     body {
@@ -31,6 +31,7 @@
       margin: 0;
       -webkit-font-smoothing: none;
       font-smooth: never;
+      color:white;
       -moz-osx-font-smoothing: grayscale
     }
 
@@ -107,7 +108,7 @@
       }
     }
 
-    #menu-screen {
+    .dark-background {
       background: var(--m-bg);
       padding-bottom: 10px;
     }
@@ -163,7 +164,7 @@
       margin-bottom: 20px
     }
 
-    #menu-list-container {
+    #menu-container {
       background: var(--ml-bg);
       height: 70vh;
       width: 100vw;
@@ -365,7 +366,7 @@
       <button class="mc-button">About Me</button>
 
       <div class="menu-bottom">
-        <button class="mc-button">Options...</button>
+        <button class="mc-button" id="options-button">Options...</button>
         <button class="mc-button" onclick="location.href='https://sites.google.com/view/ditizens/individual-projects'">
           Quit Game
         </button>
@@ -379,16 +380,31 @@
     </footer>
   </div>
 
-  <div id="menu-screen" class="ui" style="display: none;">
+  <div id="menu-screen" class="ui dark-background" style="display: none;">
     <p class="title" id="menu-title"></p>
     <input class="mc-input" id="menu-search">
     <div class="header-separator"></div>
-    <div id="menu-list-container">
+    <div id="menu-container">
       <div id="menu-list"></div>
     </div>
     <div class="footer-separator"></div>
     <button id="back" class="mc-button"
       onclick="document.getElementById('menu-screen').style.display = 'none'; document.getElementById('main-menu').style.display = 'flex'">
+      Back
+    </button>
+  </div>
+
+  <div id="options-screen" class="ui dark-background" style="display: none;">
+    <p class="title" id="options-title">Select Version</p>
+    <div class="header-separator"></div>
+    <div id="menu-container">
+      <div id="versions" style="display: flex; flex-direction: column;gap: 10px"> 
+
+      </div>
+    </div>
+    <div class="footer-separator"></div>
+    <button id="back" class="mc-button"
+      onclick="document.getElementById('options-screen').style.display = 'none'; document.getElementById('main-menu').style.display = 'flex'">
       Back
     </button>
   </div>

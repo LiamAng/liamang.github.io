@@ -1,6 +1,29 @@
 import * as THREE from "https://unpkg.com/three@0.160.0/build/three.module.js";
 
-const assetsPrefix = "https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/refs/heads/26.1/assets/minecraft/";
+const supportedVersion = [
+    "1.20.5", "1.21", "1.21.4", "1.21.5", 
+    "1.21.6", "1.21.9", "1.21.11", "26.1", "26.2"
+]
+
+const versions = document.getElementById("versions");
+const selectedVersion = localStorage.getItem("version") || "26.1"
+supportedVersion.forEach((version) => {
+    const button = document.createElement("button")
+    button.classList.add("mc-button");
+    button.innerHTML = version;
+    button.style.width = "500px";
+    button.style.maxWidth = "90vw";
+
+    button.onclick = () => {
+        localStorage.setItem("version", version);
+        window.location.reload();
+    }
+    versions.appendChild(button);
+})
+
+document.getElementById("options-title").innerHTML = `Select Version (${selectedVersion})`
+
+const assetsPrefix = "https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/refs/heads/"+ selectedVersion +"/assets/minecraft/";
 
 const assets = {
     images: {
@@ -296,7 +319,10 @@ function populateMenu(contents, title) {
 document.getElementById("flowchart-button").onclick = () => { populateMenu(flowcharts, "Select Flowchart") };
 
 document.getElementById("projects-button").onclick = () => { populateMenu(projects, "Select Project") }
-
+document.getElementById("options-button").onclick = () => {
+    document.getElementById("options-screen").style.display = "flex";
+    document.getElementById("main-menu").style.display = "none";
+};
 menuSearch.oninput = () => {
     console.log(menuSearch.value)
     Array.from(menuList.getElementsByClassName("content")).forEach((content) => {
