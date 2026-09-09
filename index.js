@@ -244,6 +244,7 @@ const projects = [
 ]
 
 function populateMenu(contents, title) {
+    menuSearch.value = "";
     document.getElementById("menu-title").innerHTML = title
     menuList.innerHTML="";
     if (contents.length < 1) {
@@ -295,7 +296,6 @@ document.getElementById("flowchart-button").onclick = () => { populateMenu(flowc
 
 document.getElementById("projects-button").onclick = () => { populateMenu(projects, "Select Project") }
 
-menuSearch.value = "";
 menuSearch.oninput = () => {
     console.log(menuSearch.value)
     Array.from(menuList.getElementsByClassName("content")).forEach((content) => {
