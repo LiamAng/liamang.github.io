@@ -19,6 +19,10 @@
       -webkit-user-select: none;
       -ms-user-select: none; 
       user-select: none; 
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      scrollbar-width: none
     }
 
     .ui {
@@ -179,11 +183,9 @@
       display: flex;
       flex-direction: column;
       overflow-y: scroll;
-      &::-webkit-scrollbar {
-        display: none; /* Hide scrollbar */
-      }
-      scrollbar-width: none
+    
     }
+
     /* ::-webkit-scrollbar {
       width: 20px;
       background-image: url("https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/refs/heads/26.1/assets/minecraft/textures/gui/sprites/widget/scroller_background.png");
@@ -338,6 +340,43 @@
     .show {
       animation: fadeIn 1s linear forwards
     }
+
+    .about-icon {
+      image-rendering: pixelated;
+      width: 167px;
+      aspect-ratio: 1;
+      margin-left: 20px;
+    }
+
+    .main {
+      display: flex;
+      align-items: center;
+      text-align: start;
+      gap: 40px;
+    }
+
+    .socials{
+      padding-top: 50px;
+      button {
+        max-width: 90%;
+        width: 400px;
+      }
+      padding-bottom: 20px;
+    }
+
+    @media (max-width: 500px) {
+      .main{
+        flex-direction: column;
+        p {
+          margin-inline: 10px;
+        }
+      }
+    }
+
+    .scroll-container {
+      width: 100%;
+      overflow: scroll;
+    }
   </style>
 </head>
 
@@ -363,7 +402,7 @@
     <div class="menu">
       <button class="mc-button" id="flowchart-button">Flowchart</button>
       <button class="mc-button" id="projects-button">Projects</button>
-      <button class="mc-button">About Me</button>
+      <button class="mc-button" id="about-button">About Me</button>
 
       <div class="menu-bottom">
         <button class="mc-button" id="options-button">Options...</button>
@@ -399,12 +438,41 @@
     <div class="header-separator"></div>
     <div id="menu-container">
       <div id="versions" style="display: flex; flex-direction: column;gap: 10px"> 
-
       </div>
     </div>
     <div class="footer-separator"></div>
     <button id="back" class="mc-button"
       onclick="document.getElementById('options-screen').style.display = 'none'; document.getElementById('main-menu').style.display = 'flex'">
+      Back
+    </button>
+  </div>
+
+  <div id="about-screen" class="ui dark-background" style="display: none">
+    <p class="title">About Me</p>
+    <div class="header-separator"></div>
+    <div id="menu-container" style="flex-direction: column;">
+      <div class="scroll-container">
+        <div class="main">
+          <img class="about-icon" src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/refs/heads/26.1/assets/minecraft/textures/item/book.png">
+          <div class="about-me">
+            <p>Name: Liam Richardson C. Ang</p>
+            <p id="age"></p>
+            <p>Birthday: February 1 2008 7:39 am</p>
+            <p>Hobbies/Interests: Doom scrolling, Coding, Native Modding, Technical Minecraft</p>
+          </div>
+        </div>
+        <div class="socials">
+          <button class="mc-button" onclick="window.open('https://github.com/Zeuroux')">Github (main)</button>
+          <button class="mc-button" onclick="window.open('https://github.com/LiamAng')">Github (school)</button>
+          <button class="mc-button" onclick="window.open('https://www.facebook.com/liamrichardson.ang')">Facebook</button>
+          <button class="mc-button" onclick="window.open('https://www.instagram.com/zeuroux/')">Instagram</button>
+          <button class="mc-button" onclick="window.open('https://discord.com/users/779174051092234261')">Discord</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-separator"></div>
+    <button id="back" class="mc-button"
+      onclick="document.getElementById('about-screen').style.display = 'none'; document.getElementById('main-menu').style.display = 'flex'">
       Back
     </button>
   </div>

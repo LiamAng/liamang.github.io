@@ -161,14 +161,52 @@ const tickBar = () => {
     requestAnimationFrame(tickBar);
 };
 requestAnimationFrame(tickBar);
+const age = document.getElementById("age");
+function timeSince(timestamp) {
+  const start = new Date(timestamp);
+  const now = new Date();
 
+  let years = now.getFullYear() - start.getFullYear();
+  let months = now.getMonth() - start.getMonth();
+  let days = now.getDate() - start.getDate();
+  let hours = now.getHours() - start.getHours();
+  let minutes = now.getMinutes() - start.getMinutes();
+
+  if (minutes < 0) {
+    minutes += 60;
+    hours--;
+  }
+
+  if (hours < 0) {
+    hours += 24;
+    days--;
+  }
+
+  if (days < 0) {
+    months--;
+    days += new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      0
+    ).getDate();
+  }
+
+  if (months < 0) {
+    months += 12;
+    years--;
+  }
+
+  return { years, months, days, hours, minutes };
+}
 const startPanorama = () => {
     let prev = performance.now();
     renderer.setAnimationLoop(now => {
-    const dt = Math.min(now - prev, 100);
-    prev = now;
-    scene.rotation.y += dt * 0.0000349;
-    renderer.render(scene, camera);
+        const time = timeSince(1201822740000);
+        age.innerHTML = "Age: " + `${time.years}y, ${time.months}m, ${time.days}d, ${time.hours}h, ${time.minutes}m`;
+        const dt = Math.min(now - prev, 100);
+        prev = now;
+        scene.rotation.y += dt * 0.0000349;
+        renderer.render(scene, camera);
     });
 };
 
@@ -184,7 +222,7 @@ splash.addEventListener("click", () => {
 const pressEvent = window.PointerEvent ? "pointerdown" : "touchstart";
 document.querySelectorAll("button").forEach(b => b.addEventListener(pressEvent, playClick));
 
-const splashTexts = ["Hello!", "70% bug free!", "corny ba toh", "sorry.", "WELCOME!", "septic tank code", "nonstop larp"]
+const splashTexts = ["Hello!", "70% bug free!", "corny ba toh", "sorry.", "WELCOME!", "septic tank code", "nonstop larp", "No Games", "Unlimited Bacon"]
 
 splashText.innerHTML = splashTexts[Math.floor(Math.random() * splashTexts.length)]
 const menuList = document.getElementById("menu-list");
@@ -263,7 +301,13 @@ const flowcharts = [
 ]
 
 const projects = [
-
+    [
+        "https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/refs/heads/26.1/assets/minecraft/textures/misc/unknown_pack.png",
+        "Online Portfolio",
+        "This site.",
+        "HTML, JS",
+        "https://github.com/LiamAng/liamang.github.io"
+    ],
 ]
 
 const menuSearch = document.getElementById("menu-search");
@@ -321,6 +365,10 @@ document.getElementById("flowchart-button").onclick = () => { populateMenu(flowc
 document.getElementById("projects-button").onclick = () => { populateMenu(projects, "Select Project") }
 document.getElementById("options-button").onclick = () => {
     document.getElementById("options-screen").style.display = "flex";
+    document.getElementById("main-menu").style.display = "none";
+};
+document.getElementById("about-button").onclick = () => {
+    document.getElementById("about-screen").style.display = "flex";
     document.getElementById("main-menu").style.display = "none";
 };
 menuSearch.oninput = () => {
