@@ -242,6 +242,7 @@ const flowcharts = [
 const projects = [
 
 ]
+
 const menuSearch = document.getElementById("menu-search");
 
 function populateMenu(contents, title) {
@@ -288,8 +289,8 @@ function populateMenu(contents, title) {
         openButton.addEventListener("click", (e) => {e.stopImmediatePropagation(); open(); playClick()})
         menuList.appendChild(content);
     }
-    document.getElementById("menu-screen").style.visibility = "visible";
-    document.getElementById("main-menu").style.visibility = "hidden";
+    document.getElementById("menu-screen").style.display = "flex";
+    document.getElementById("main-menu").style.display = "none";
 }
 
 document.getElementById("flowchart-button").onclick = () => { populateMenu(flowcharts, "Select Flowchart") };
