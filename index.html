@@ -11,30 +11,29 @@
       margin: 0;
       height: 100%;
       overflow: hidden;
-      background: #ef313d;
       font-family: Minecraftia, monospace;
       text-align: center
     }
 
     .ui {
-      position:absolute;
-      inset:0;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      user-select:none;
-      font-weight:100;
-      margin:0;
-      -webkit-font-smoothing:none;
-      font-smooth:never;
-      -moz-osx-font-smoothing:grayscale
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      user-select: none;
+      font-weight: 100;
+      margin: 0;
+      -webkit-font-smoothing: none;
+      font-smooth: never;
+      -moz-osx-font-smoothing: grayscale
     }
 
     #title-container {
-      position:relative;
-      width:clamp(220px,90vw,600px);
-      margin-top:8vh;
-      margin-bottom:20vh
+      position: relative;
+      width: clamp(220px, 90vw, 600px);
+      margin-top: 8vh;
+      margin-bottom: 20vh
     }
 
     .mc-button {
@@ -60,7 +59,10 @@
       touch-action: manipulation
     }
 
-    .mc-button:hover { border-image-source: var(--btn-bg-hover) }
+    .mc-button:hover {
+      border-image-source: var(--btn-bg-hover)
+    }
+
     .menu {
       width: 90%;
       max-width: 500px;
@@ -92,6 +94,7 @@
         margin-top: 10px;
         gap: 5px;
       }
+
       #title-container {
         width: auto;
         height: 20vh;
@@ -116,7 +119,6 @@
       border-image-slice: 1 fill;
       border-width: 2px;
       border-image-repeat: stretch;
-      background: #000;
       color: #fff;
       font-family: Minecraftia, monospace;
       font-size: 16px;
@@ -134,7 +136,9 @@
       outline: none;
     }
 
-    .mc-input:hover { border-image-source: var(--tf-bg-hover) }
+    .mc-input:hover {
+      border-image-source: var(--tf-bg-hover)
+    }
 
     .header-separator {
       background: var(--hs);
@@ -154,31 +158,66 @@
       margin-bottom: 20px
     }
 
-    #menu-list {
+    #menu-list-container {
       background: var(--ml-bg);
       height: 70vh;
       width: 100vw;
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      overflow-y: hidden;
+      justify-content: center;
     }
+
+    #menu-list {
+      width: 670px;
+      max-width: 90%;
+      display: flex;
+      flex-direction: column;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        display: none; /* Hide scrollbar */
+      }
+      scrollbar-width: none
+    }
+    /* ::-webkit-scrollbar {
+      width: 20px;
+      background-image: url("https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/refs/heads/26.1/assets/minecraft/textures/gui/sprites/widget/scroller_background.png");
+      background-size: 100% 100%;
+      image-rendering: pixelated;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-image: url("https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/refs/heads/26.1/assets/minecraft/textures/gui/sprites/widget/scroller.png");
+      background-size: 100% 100%;
+      background-repeat: repeat-y;
+      image-rendering: pixelated;
+    } */
 
     #menu-list .content {
       display: flex;
       align-items: center;
       text-shadow: 2px 2px #3F3F3F;
-
+      white-space: nowrap;
       .icon {
         position: relative;
         display: block;
         width: 80px;
         height: 80px;
+        aspect-ratio: 1;
         padding: 10px;
 
-        img {
+        .whiteout {
           width: 100%;
           height: 100%;
-          image-rendering: pixelated;
+          background-color: white;
+        }
+
+        img {
+          position: absolute;
+          inset: 10px;
+          max-width: calc(100% - 20px);
+          max-height: calc(100% - 20px);
+          margin: auto;
+          z-index: 1;
         }
 
         button {
@@ -211,8 +250,6 @@
       }
 
       .info {
-        width: 45vw;
-
         p {
           margin: 0;
           align-items: start;
@@ -224,7 +261,7 @@
         }
       }
 
-      &.selected { 
+      &.selected {
         border-image-source: var(--tf-bg-hover);
         border-image-slice: 1 fill;
         border-image-width: 2px;
@@ -243,32 +280,58 @@
     }
 
     @media (max-width: 520px) {
-      footer p { font-size: 3vw; }
+      footer p {
+        font-size: 3vw;
+      }
     }
 
-    progress::-webkit-progress-bar { background: transparent }
+    progress::-webkit-progress-bar {
+      background: transparent
+    }
 
-    progress::-webkit-progress-value { background: #fff }
+    progress::-webkit-progress-value {
+      background: #fff
+    }
 
-    progress::-moz-progress-bar { background: #fff }
+    progress::-moz-progress-bar {
+      background: #fff
+    }
 
     @keyframes splash-pulse {
-      from { transform: rotate(-20deg) scale(1) }
-      to { transform: rotate(-20deg) scale(1.15) }
+      from {
+        transform: rotate(-20deg) scale(1)
+      }
+
+      to {
+        transform: rotate(-20deg) scale(1.15)
+      }
     }
 
     @keyframes fadeOut {
-      to { opacity: 0; visibility: hidden }
+      to {
+        opacity: 0;
+        visibility: hidden
+      }
     }
 
     @keyframes fadeIn {
-      0% { opacity: 0 }
-      to { opacity: 1; visibility: visible }
+      0% {
+        opacity: 0
+      }
+
+      to {
+        opacity: 1;
+        visibility: visible
+      }
     }
 
-    .hide { animation: fadeOut 1s linear forwards }
+    .hide {
+      animation: fadeOut 1s linear forwards
+    }
 
-    .show { animation: fadeIn 1s linear forwards }
+    .show {
+      animation: fadeIn 1s linear forwards
+    }
   </style>
 </head>
 
@@ -280,9 +343,8 @@
     <div id="title-container">
       <img id="title" alt="Minecraft" draggable="false"
         style="width:100%;height:100%;display:block;-webkit-user-drag:none">
-      <p id="splash-text"
-        style="position:absolute;right:-2%;bottom:-5%;
-        font-size:clamp(2px,4cqh,24px);
+      <p id="splash-text" style="position:absolute;right:6.7%;bottom:-5%;
+        font-size: min(clamp(2px,4cqh,24px), clamp(2px,4vw,24px));
         transform-origin:center;
         animation:splash-pulse .4s infinite alternate ease-in-out;
         white-space:nowrap;
@@ -299,9 +361,7 @@
 
       <div class="menu-bottom">
         <button class="mc-button">Options...</button>
-        <button
-          class="mc-button"
-          onclick="location.href='https://sites.google.com/view/ditizens/individual-projects'">
+        <button class="mc-button" onclick="location.href='https://sites.google.com/view/ditizens/individual-projects'">
           Quit Game
         </button>
       </div>
@@ -318,11 +378,11 @@
     <p class="title" id="menu-title"></p>
     <input class="mc-input" id="menu-search">
     <div class="header-separator"></div>
-    <div id="menu-list"></div>
+    <div id="menu-list-container">
+      <div id="menu-list"></div>
+    </div>
     <div class="footer-separator"></div>
-    <button 
-      id="back"
-      class="mc-button"
+    <button id="back" class="mc-button"
       onclick="document.getElementById('menu-screen').style.visibility = 'hidden'; document.getElementById('main-menu').style.visibility = 'visible'">
       Back
     </button>

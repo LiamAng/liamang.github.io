@@ -166,18 +166,77 @@ const splashTexts = ["Hello!", "70% bug free!", "corny ba toh", "sorry.", "WELCO
 splashText.innerHTML = splashTexts[Math.floor(Math.random() * splashTexts.length)]
 const menuList = document.getElementById("menu-list");
 
-const test = [
-    [
-        "https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/refs/heads/26.1/assets/minecraft/textures/misc/unknown_server.png",
-        "what",
-        "wah",
-        "asdasdd",
-        "https://example.com"
-    ]
-]
-
 const flowcharts = [
-
+    [
+        "assets/flowchart/1.png",
+        "Flowchart 1",
+        "Print name 5 times",
+        "Sequence",
+        "assets/flowchart/1.png"
+    ],
+    [
+        "assets/flowchart/2.png",
+        "Flowchart 2",
+        "Swap values",
+        "Sequence",
+        "assets/flowchart/2.png"
+    ],
+    [
+        "assets/flowchart/3.png",
+        "Flowchart 3",
+        "Compute simple arithmetic",
+        "Sequence",
+        "assets/flowchart/3.png",
+    ],
+    [
+        "assets/flowchart/4.png",
+        "Flowchart 4",
+        "Celsius to Fahrenheit",
+        "Sequence",
+        "assets/flowchart/4.png",
+    ],
+    [
+        "assets/flowchart/5.png",
+        "Flowchart 5",
+        "Sales Computation",
+        "Sequence",
+        "assets/flowchart/5.png"
+    ],
+    [
+        "assets/flowchart/6.png",
+        "Flowchart 6",
+        "Grade Average",
+        "Sequence",
+        "assets/flowchart/6.png"
+    ],
+    [
+        "assets/flowchart/7.png",
+        "Flowchart 7",
+        "Square and Cube",
+        "Sequence",
+        "assets/flowchart/7.png"
+    ],
+    [
+        "assets/flowchart/8.png",
+        "Flowchart 8",
+        "Rectangle Measures",
+        "Sequence",
+        "assets/flowchart/8.png"
+    ],
+    [
+        "assets/flowchart/9.png",
+        "Flowchart 9",
+        "Circle Measures",
+        "Sequence",
+        "assets/flowchart/9.png"
+    ],
+    [
+        "assets/flowchart/10.png",
+        "Flowchart 10",
+        "Triangle Measures",
+        "Sequence",
+        "assets/flowchart/10.png"
+    ],
 ]
 
 const projects = [
@@ -208,6 +267,7 @@ function populateMenu(contents, title) {
         }
         content.innerHTML = `
             <div class="icon">
+                <div class="whiteout"></div>
                 <img src="${stuff[0]}">
                 <button class="open"></button>
             </div>
@@ -240,9 +300,9 @@ menuSearch.oninput = () => {
     console.log(menuSearch.value)
     Array.from(menuList.getElementsByClassName("content")).forEach((content) => {
         if (content.innerHTML.includes(menuSearch.value)) {
-            content.style.visibility = "visible"
+            content.style.display = "flex"
         } else {
-            content.style.visibility = "hidden"
+            content.style.display = "none"
         }
     });
 }
