@@ -242,6 +242,7 @@ const flowcharts = [
 const projects = [
 
 ]
+const menuSearch = document.getElementById("menu-search");
 
 function populateMenu(contents, title) {
     menuSearch.value = "";
@@ -290,7 +291,6 @@ function populateMenu(contents, title) {
     document.getElementById("menu-screen").style.visibility = "visible";
     document.getElementById("main-menu").style.visibility = "hidden";
 }
-const menuSearch = document.getElementById("menu-search");
 
 document.getElementById("flowchart-button").onclick = () => { populateMenu(flowcharts, "Select Flowchart") };
 
