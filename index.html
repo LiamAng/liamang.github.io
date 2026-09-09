@@ -356,12 +356,17 @@
     }
 
     .socials{
+      display:flow-root;
       padding-top: 50px;
       button {
         max-width: 90%;
         width: 400px;
       }
       padding-bottom: 20px;
+    }
+
+    .socials > * + * {
+      margin-top: 10px;
     }
 
     @media (max-width: 500px) {
