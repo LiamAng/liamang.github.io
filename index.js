@@ -153,10 +153,10 @@ const tickBar = () => {
     if (started) return;
     bar.value += ((loaded ? 100 : done / TOTAL_ASSETS * 100) - bar.value) * .1;
     if (loaded && bar.value > 99.5) {
-    bar.value = 100;
-    bar.classList.add("hide");
-    clickPrompt.classList.add("show");
-    return;
+        bar.value = 100;
+        bar.classList.add("hide");
+        clickPrompt.classList.add("show");
+        return;
     }
     requestAnimationFrame(tickBar);
 };

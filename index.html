@@ -187,10 +187,14 @@
 
     #menu-options {
       max-width: 90vw;
-      button {
-        width: 200px
-      }
       width: 900px;
+      & > * + * {
+        margin-top: 5px;
+      }
+      button {
+        width: 190px
+      }
+      margin-bottom: 5px;
     }
 
     /* ::-webkit-scrollbar {
@@ -286,7 +290,8 @@
     }
 
     #back {
-      width: 80vw;
+      width: 500px;
+      max-width: 80vw;
     }
 
     footer p {
@@ -325,7 +330,8 @@
     @keyframes fadeOut {
       to {
         opacity: 0;
-        display: none
+        visibility: hidden;
+        pointer-events: none;
       }
     }
 
@@ -336,7 +342,6 @@
 
       to {
         opacity: 1;
-        display: block;
         visibility: visible;
       }
     }
@@ -371,10 +376,9 @@
         width: 400px;
       }
       padding-bottom: 20px;
-    }
-
-    .socials > * + * {
-      margin-top: 10px;
+      & > * + * {
+        margin-top: 10px;
+      }
     }
 
     @media (max-width: 500px) {
