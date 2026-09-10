@@ -1,0 +1,30 @@
+[
+    [
+        "https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/refs/heads/26.1/assets/minecraft/textures/misc/unknown_pack.png",
+        "BuildLimitChanger",
+        "Bypass minecraft build limit",
+        "C",
+        "https://github.com/Zeuroux/BuildLimitChanger"
+    ],
+    [
+        "https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/refs/heads/26.1/assets/minecraft/textures/misc/unknown_pack.png",
+        "FortressHSSViewer",
+        "Visualizes Fortress Spawn Spots",
+        "HTML, JS, C++",
+        "https://github.com/Zeuroux/BuildLimitChanger"
+    ],
+    [
+        "https://raw.githubusercontent.com/Zeuroux/AppleSkin-Plugin/refs/heads/master/AppleSkin/Assets/PluginIcon.png",
+        "AppleSkin-Plugin (Unmaintained)",
+        "Unofficial AppleSkin plugin port.",
+        "C#",
+        "https://github.com/Zeuroux/AppleSkin-Plugin"
+    ],
+    [
+        "assets/projects/icons/launchly.svg",
+        "Launchly (Discontinued)",
+        "Minecraft Version Switcher for Android",
+        "Kotlin",
+        "https://github.com/Zeuroux/Launchly"
+    ]
+]

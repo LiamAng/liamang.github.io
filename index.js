@@ -227,89 +227,6 @@ const splashTexts = ["Hello!", "70% bug free!", "corny ba toh", "sorry.", "WELCO
 splashText.innerHTML = splashTexts[Math.floor(Math.random() * splashTexts.length)]
 const menuList = document.getElementById("menu-list");
 
-const flowcharts = [
-    [
-        "assets/flowchart/1.png",
-        "Flowchart 1",
-        "Print name 5 times",
-        "Sequence",
-        "assets/flowchart/1.png"
-    ],
-    [
-        "assets/flowchart/2.png",
-        "Flowchart 2",
-        "Swap values",
-        "Sequence",
-        "assets/flowchart/2.png"
-    ],
-    [
-        "assets/flowchart/3.png",
-        "Flowchart 3",
-        "Compute simple arithmetic",
-        "Sequence",
-        "assets/flowchart/3.png",
-    ],
-    [
-        "assets/flowchart/4.png",
-        "Flowchart 4",
-        "Celsius to Fahrenheit",
-        "Sequence",
-        "assets/flowchart/4.png",
-    ],
-    [
-        "assets/flowchart/5.png",
-        "Flowchart 5",
-        "Sales Computation",
-        "Sequence",
-        "assets/flowchart/5.png"
-    ],
-    [
-        "assets/flowchart/6.png",
-        "Flowchart 6",
-        "Grade Average",
-        "Sequence",
-        "assets/flowchart/6.png"
-    ],
-    [
-        "assets/flowchart/7.png",
-        "Flowchart 7",
-        "Square and Cube",
-        "Sequence",
-        "assets/flowchart/7.png"
-    ],
-    [
-        "assets/flowchart/8.png",
-        "Flowchart 8",
-        "Rectangle Measures",
-        "Sequence",
-        "assets/flowchart/8.png"
-    ],
-    [
-        "assets/flowchart/9.png",
-        "Flowchart 9",
-        "Circle Measures",
-        "Sequence",
-        "assets/flowchart/9.png"
-    ],
-    [
-        "assets/flowchart/10.png",
-        "Flowchart 10",
-        "Triangle Measures",
-        "Sequence",
-        "assets/flowchart/10.png"
-    ],
-]
-
-const projects = [
-    [
-        "https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/refs/heads/26.1/assets/minecraft/textures/misc/unknown_pack.png",
-        "Online Portfolio",
-        "This site.",
-        "HTML, JS",
-        "https://github.com/LiamAng/liamang.github.io"
-    ],
-]
-
 const menuSearch = document.getElementById("menu-search");
 
 function populateMenu(contents, title) {
@@ -360,9 +277,62 @@ function populateMenu(contents, title) {
     document.getElementById("main-menu").style.display = "none";
 }
 
-document.getElementById("flowchart-button").onclick = () => { populateMenu(flowcharts, "Select Flowchart") };
+async function loadFlowcharts(selected = "Sequence") {
+    const baseUrl = `/assets/flowcharts/${selected.toLowerCase()}`;
+    const response = await(fetch(`${baseUrl}/index.json`));
+    var flowcharts = []
+    if (response.ok) {
+        const flowchartIndex = await response.json()
+        flowchartIndex.forEach((title, index) => {
+            const url = `${baseUrl}/${index+1}.png`;
+            const flowchart = [
+                url,
+                `Flowchart ${index+1}`,
+                title,
+                selected,
+                url
+            ]
+            flowcharts.push(flowchart); 
+        });
+    }
+    populateMenu(flowcharts, `${selected} Flowcharts`)
+}
 
-document.getElementById("projects-button").onclick = () => { populateMenu(projects, "Select Project") }
+const tabs = document.getElementById("menu-options");
+document.getElementById("flowchart-button").onclick = () => {
+    tabs.innerHTML = "";
+    const tabTitles = ["Sequence", "Selection", "Iteration"];
+    tabTitles.forEach((tabTitle) => {
+        const tab = document.createElement("button");
+        tab.classList.add("mc-button");
+        tab.innerHTML = tabTitle;
+        tab.onclick = () => { loadFlowcharts(tabTitle) };
+        tabs.appendChild(tab);
+    });
+    loadFlowcharts();
+};
+
+async function loadProjects(selected = "School") {
+    const response = await(fetch(`/assets/projects/${selected.toLowerCase()}.json`));
+    var projects = []
+    if (response.ok) {
+        projects = await response.json();
+    }
+    populateMenu(projects, `${selected} Flowcharts`)
+}
+
+document.getElementById("projects-button").onclick = () => {
+    tabs.innerHTML = "";
+    const tabTitles = ["School", "Hobby"];
+    tabTitles.forEach((tabTitle) => {
+        const tab = document.createElement("button");
+        tab.classList.add("mc-button");
+        tab.innerHTML = tabTitle;
+        tab.onclick = () => { loadProjects(tabTitle) };
+        tabs.appendChild(tab);
+    });
+    loadProjects();
+}
 document.getElementById("options-button").onclick = () => {
     document.getElementById("options-screen").style.display = "flex";
     document.getElementById("main-menu").style.display = "none";

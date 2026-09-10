@@ -183,7 +183,14 @@
       display: flex;
       flex-direction: column;
       overflow-y: scroll;
-    
+    }
+
+    #menu-options {
+      max-width: 90vw;
+      button {
+        width: 200px
+      }
+      width: 900px;
     }
 
     /* ::-webkit-scrollbar {
@@ -318,7 +325,7 @@
     @keyframes fadeOut {
       to {
         opacity: 0;
-        visibility: hidden
+        display: none
       }
     }
 
@@ -329,7 +336,8 @@
 
       to {
         opacity: 1;
-        visibility: visible
+        display: block;
+        visibility: visible;
       }
     }
 
@@ -432,6 +440,7 @@
       <div id="menu-list"></div>
     </div>
     <div class="footer-separator"></div>
+    <div id="menu-options"></div>
     <button id="back" class="mc-button"
       onclick="document.getElementById('menu-screen').style.display = 'none'; document.getElementById('main-menu').style.display = 'flex'">
       Back
