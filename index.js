@@ -254,7 +254,6 @@ function populateMenu(contents, title) {
         }
         content.innerHTML = `
             <div class="icon">
-                <div class="whiteout"></div>
                 <img src="${stuff[0]}">
                 <button class="open"></button>
             </div>
