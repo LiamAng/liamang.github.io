@@ -115,11 +115,12 @@
       white-space: nowrap;
       text-overflow: ellipsis;
       -webkit-tap-highlight-color: transparent;
-      touch-action: manipulation
-    }
+      touch-action: manipulation;
 
-    .mc-button:hover {
-      border-image-source: var(--btn-bg-hover)
+      &:hover,
+      &:focus-visible {
+        border-image-source: var(--btn-bg-hover)
+      }
     }
 
     .menu {
@@ -195,7 +196,8 @@
       outline: none;
     }
 
-    .mc-input:hover {
+    .mc-input:hover,
+    .mc-input:focus-visible {
       border-image-source: var(--tf-bg-hover)
     }
 
@@ -217,7 +219,7 @@
       margin-bottom: 20px
     }
 
-    #menu-container {
+    .menu-container {
       background: var(--ml-bg);
       height: 70vh;
       width: 100vw;
@@ -226,12 +228,30 @@
       justify-content: center;
     }
 
+    .menu-container.column {
+      flex-direction: column;
+    }
+
     #menu-list {
       width: 670px;
       max-width: 90%;
       display: flex;
       flex-direction: column;
       overflow-y: scroll;
+    }
+
+    #versions {
+      width: 670px;
+      max-width: 90%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      overflow-y: scroll;
+      align-items: center;
+      .mc-button {
+        flex-shrink: 0;
+      }
     }
 
     #menu-list .content {
@@ -244,8 +264,6 @@
 
       .icon {
         display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
         place-items: center;
         width: 80px;
         height: 80px;
@@ -311,7 +329,6 @@
         border-image-slice: 1 fill;
         border-image-width: 2px;
         border-image-repeat: stretch;
-        image-rendering: pixelated;
       }
     }
 
@@ -327,10 +344,10 @@
       margin-bottom: 5px;
     }
 
-
-    #back {
+    .back-button {
       width: 500px;
       max-width: 80vw;
+      flex-shrink: 0;
     }
 
     footer p {
@@ -348,31 +365,36 @@
       image-rendering: pixelated;
       width: 167px;
       aspect-ratio: 1;
-      margin-left: 20px;
+      flex-shrink: 0;
+      content: var(--abt-icon);
     }
 
     .main-infos {
       display: flex;
       align-items: center;
+      justify-content: center;
       text-align: start;
       gap: 40px;
+      max-width: 600px;
+      margin: 0 auto;
+      padding-inline: 16px;
       @media (max-width: 500px) {
         flex-direction: column;
         p {
           margin-inline: 10px;
         }
       }
-      .socials{
-        display:flow-root;
-        padding-top: 50px;
-        button {
-          max-width: 90%;
-          width: 400px;
-        }
-        margin-bottom: 20px;
-        & > * + * {
-          margin-top: 10px;
-        }
+    }
+    .socials{
+      display:flow-root;
+      padding-top: 50px;
+      button {
+        max-width: 90%;
+        width: 400px;
+      }
+      margin-bottom: 20px;
+      & > * + * {
+        margin-top: 10px;
       }
     }
 
@@ -380,26 +402,86 @@
       width: 100%;
       overflow: scroll;
     }
+
+    #panorama {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    #title {
+      width: 100%;
+      height: 100%;
+      display: block;
+      -webkit-user-drag: none;
+    }
+
+    #splash-text {
+      position: absolute;
+      right: 6.7%;
+      bottom: -5%;
+      font-size: min(clamp(2px, 4cqh, 24px), clamp(2px, 4vw, 24px));
+      transform-origin: center;
+      animation: splash-pulse .4s infinite alternate ease-in-out;
+      white-space: nowrap;
+      z-index: 10;
+      color: #FFFF55;
+      text-shadow: 3px 3px #3F3F15;
+    }
+
+    footer {
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      color: #fff;
+      text-shadow: 2px 2px #3F3F3F;
+      justify-content: space-between;
+    }
+
+    #loading {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #ef313d;
+      color: #fff;
+      z-index: 99999;
+    }
+
+    #progress {
+      width: 50%;
+      height: 25px;
+      border: solid 3px white;
+      border-radius: 0;
+      padding: 2px;
+      background: transparent;
+    }
+
+    #click-prompt {
+      position: absolute;
+      bottom: 0;
+      visibility: hidden;
+    }
+
+    #stupid {
+      width: 0px;
+      height: 0px;
+    }
   </style>
 </head>
 
 <body>
-
-  <canvas id="panorama" style="position:fixed;inset:0;width:100%;height:100%;display:block"></canvas>
+  <canvas id="panorama"></canvas>
 
   <div id="main-menu" class="ui">
     <div id="title-container">
-      <img id="title" alt="Minecraft" draggable="false"
-        style="width:100%;height:100%;display:block;-webkit-user-drag:none">
-      <p id="splash-text" style="position:absolute;right:6.7%;bottom:-5%;
-        font-size: min(clamp(2px,4cqh,24px), clamp(2px,4vw,24px));
-        transform-origin:center;
-        animation:splash-pulse .4s infinite alternate ease-in-out;
-        white-space:nowrap;
-        z-index:10;
-        color:#FFFF55;
-        text-shadow:3px 3px #3F3F15">
-      </p>
+      <img id="title" alt="Minecraft" draggable="false">
+      <p id="splash-text"></p>
     </div>
 
     <div class="menu">
@@ -415,8 +497,7 @@
       </div>
     </div>
 
-    <footer
-      style="display:flex;position:absolute;bottom:0;width:100%;color:#fff;text-shadow:2px 2px #3F3F3F;justify-content:space-between">
+    <footer>
       <p>© 2026-2027 DIT 1-1</p>
       <p>PUP Iskolar ng Bayan</p>
     </footer>
@@ -426,12 +507,12 @@
     <p class="title" id="menu-title"></p>
     <input class="mc-input" id="menu-search">
     <div class="header-separator"></div>
-    <div id="menu-container">
+    <div id="menu-container" class="menu-container">
       <div id="menu-list"></div>
     </div>
     <div class="footer-separator"></div>
     <div id="menu-options"></div>
-    <button id="back" class="mc-button"
+    <button id="back" class="mc-button back-button"
       onclick="document.getElementById('menu-screen').style.display = 'none'; document.getElementById('main-menu').style.display = 'flex'">
       Back
     </button>
@@ -440,12 +521,11 @@
   <div id="options-screen" class="ui dark-background" style="display: none;">
     <p class="title" id="options-title">Select Version</p>
     <div class="header-separator"></div>
-    <div id="menu-container">
-      <div id="versions" style="display: flex; flex-direction: column;gap: 10px"> 
-      </div>
+    <div class="menu-container">
+      <div id="versions"></div>
     </div>
     <div class="footer-separator"></div>
-    <button id="back" class="mc-button"
+    <button class="mc-button back-button"
       onclick="document.getElementById('options-screen').style.display = 'none'; document.getElementById('main-menu').style.display = 'flex'">
       Back
     </button>
@@ -454,10 +534,10 @@
   <div id="about-screen" class="ui dark-background" style="display: none">
     <p class="title">About Me</p>
     <div class="header-separator"></div>
-    <div id="menu-container" style="flex-direction: column;">
+    <div class="menu-container column">
       <div class="scroll-container">
         <div class="main-infos">
-          <img class="about-icon" src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/refs/heads/26.1/assets/minecraft/textures/item/book.png">
+          <img class="about-icon">
           <div class="about-me">
             <p>Name: Liam Richardson C. Ang</p>
             <p id="age"></p>
@@ -475,16 +555,15 @@
       </div>
     </div>
     <div class="footer-separator"></div>
-    <button id="back" class="mc-button"
+    <button class="mc-button back-button"
       onclick="document.getElementById('about-screen').style.display = 'none'; document.getElementById('main-menu').style.display = 'flex'">
       Back
     </button>
   </div>
 
-  <div id="splash"
-    style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#ef313d;color:#fff;z-index:99999">
+  <div id="loading">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 702.4 240"
-      style="width:50%;height:auto;fill:#fff;margin-bottom:6.7%">
+      style="width:900px;max-width: 90vw;height:auto;fill:#fff;margin-bottom:6.7%">
       <g>
         <path transform="translate(40 140)"
           d="M20 0V-10Q20-14.1 17-17 14.1-20 10-20H0V-80H20V-25Q20-22.9 21.4-21.4 22.9-20 25-20H80V0Z" />
@@ -509,9 +588,8 @@
         <use href="#one" x="25.67" />
       </g>
     </svg>
-    <progress id="progress" max="100" value="0"
-      style="width:50%;height:25px;border:solid 3px white;border-radius:0;padding:2px;background:transparent"></progress>
-    <p id="click-prompt" style="position:absolute;bottom:0;visibility:hidden">Click anywhere to start</p>
+    <progress id="progress" max="100" value="0"></progress>
+    <p id="click-prompt">Click anywhere to start</p>
   </div>
 
   <script type="module" src="index.js"></script>
