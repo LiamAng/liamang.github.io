@@ -15,6 +15,55 @@
       text-align: center;
     }
 
+    progress::-webkit-progress-bar {
+      background: transparent
+    }
+
+    progress::-webkit-progress-value {
+      background: #fff
+    }
+
+    progress::-moz-progress-bar {
+      background: #fff
+    }
+
+     @keyframes splash-pulse {
+      from {
+        transform: rotate(-20deg) scale(1)
+      }
+
+      to {
+        transform: rotate(-20deg) scale(1.15)
+      }
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0
+      }
+
+      to {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    .hide {
+      animation: fadeOut 1s linear forwards
+    }
+
+    .show {
+      animation: fadeIn 1s linear forwards
+    }
+
     * {
       -webkit-user-select: none;
       -ms-user-select: none; 
@@ -133,7 +182,7 @@
       font-family: Minecraftia, monospace;
       font-size: 16px;
       width: 80vw;
-      max-width: 600px;
+      max-width: 480px;
       height: 40px;
       cursor: text;
       text-shadow: 2px 2px #3F3F3F;
@@ -185,37 +234,14 @@
       overflow-y: scroll;
     }
 
-    #menu-options {
-      max-width: 90vw;
-      & > * + * {
-        margin-top: 5px;
-      }
-      button {
-        width: 190px;
-        margin-inline: 5px;
-      }
-      margin-bottom: 5px;
-    }
-
-    /* ::-webkit-scrollbar {
-      width: 20px;
-      background-image: url("https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/refs/heads/26.1/assets/minecraft/textures/gui/sprites/widget/scroller_background.png");
-      background-size: 100% 100%;
-      image-rendering: pixelated;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background-image: url("https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/refs/heads/26.1/assets/minecraft/textures/gui/sprites/widget/scroller.png");
-      background-size: 100% 100%;
-      background-repeat: repeat-y;
-      image-rendering: pixelated;
-    } */
-
     #menu-list .content {
       display: flex;
       align-items: center;
       text-shadow: 2px 2px #3F3F3F;
+      padding-right: 100px;
       
+      @media (max-width: 550px) { padding-right: 0; }
+
       .icon {
         display: grid;
         grid-template-columns: 1fr;
@@ -289,6 +315,19 @@
       }
     }
 
+    #menu-options {
+      max-width: 90vw;
+      & > * + * {
+        margin-top: 5px;
+      }
+      button {
+        width: 190px;
+        margin-inline: 5px;
+      }
+      margin-bottom: 5px;
+    }
+
+
     #back {
       width: 500px;
       max-width: 80vw;
@@ -305,55 +344,6 @@
       }
     }
 
-    progress::-webkit-progress-bar {
-      background: transparent
-    }
-
-    progress::-webkit-progress-value {
-      background: #fff
-    }
-
-    progress::-moz-progress-bar {
-      background: #fff
-    }
-
-    @keyframes splash-pulse {
-      from {
-        transform: rotate(-20deg) scale(1)
-      }
-
-      to {
-        transform: rotate(-20deg) scale(1.15)
-      }
-    }
-
-    @keyframes fadeOut {
-      to {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-      }
-    }
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0
-      }
-
-      to {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-
-    .hide {
-      animation: fadeOut 1s linear forwards
-    }
-
-    .show {
-      animation: fadeIn 1s linear forwards
-    }
-
     .about-icon {
       image-rendering: pixelated;
       width: 167px;
@@ -361,31 +351,27 @@
       margin-left: 20px;
     }
 
-    .main {
+    .main-infos {
       display: flex;
       align-items: center;
       text-align: start;
       gap: 40px;
-    }
-
-    .socials{
-      display:flow-root;
-      padding-top: 50px;
-      button {
-        max-width: 90%;
-        width: 400px;
-      }
-      margin-bottom: 20px;
-      & > * + * {
-        margin-top: 10px;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .main{
+      @media (max-width: 500px) {
         flex-direction: column;
         p {
           margin-inline: 10px;
+        }
+      }
+      .socials{
+        display:flow-root;
+        padding-top: 50px;
+        button {
+          max-width: 90%;
+          width: 400px;
+        }
+        margin-bottom: 20px;
+        & > * + * {
+          margin-top: 10px;
         }
       }
     }
@@ -470,7 +456,7 @@
     <div class="header-separator"></div>
     <div id="menu-container" style="flex-direction: column;">
       <div class="scroll-container">
-        <div class="main">
+        <div class="main-infos">
           <img class="about-icon" src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/refs/heads/26.1/assets/minecraft/textures/item/book.png">
           <div class="about-me">
             <p>Name: Liam Richardson C. Ang</p>

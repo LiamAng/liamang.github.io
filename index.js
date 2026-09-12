@@ -305,7 +305,7 @@ document.getElementById("flowchart-button").onclick = () => {
         const tab = document.createElement("button");
         tab.classList.add("mc-button");
         tab.innerHTML = tabTitle;
-        tab.onclick = () => { loadFlowcharts(tabTitle) };
+        tab.onclick = () => { loadFlowcharts(tabTitle); playClick() };
         tabs.appendChild(tab);
     });
     loadFlowcharts();
@@ -327,7 +327,7 @@ document.getElementById("projects-button").onclick = () => {
         const tab = document.createElement("button");
         tab.classList.add("mc-button");
         tab.innerHTML = tabTitle;
-        tab.onclick = () => { loadProjects(tabTitle) };
+        tab.onclick = () => { loadProjects(tabTitle); playClick() };
         tabs.appendChild(tab);
     });
     loadProjects();
