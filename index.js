@@ -356,7 +356,7 @@ menuSearch.oninput = () => {
     });
 };
 
-function redirector() {
+document.addEventListener("DOMContentLoaded", ()=> {
     const name = window.location.hash.substring(1) || "";
     console.log(name);
-}
+})
