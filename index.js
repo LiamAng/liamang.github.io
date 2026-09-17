@@ -365,6 +365,8 @@ document.addEventListener("DOMContentLoaded", () => {
             loadFlowcharts(name);
             break;
         case "Profile":
+            document.getElementById("about-screen").style.display = "flex";
+            document.getElementById("main-menu").style.display = "none";
             break;
     }
 })
