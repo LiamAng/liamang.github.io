@@ -355,3 +355,8 @@ menuSearch.oninput = () => {
         content.style.display = content.innerHTML.includes(menuSearch.value) ? "flex" : "none";
     });
 };
+
+function redirector() {
+    const name = window.location.hash.substring(1) || "";
+    console.log(name);
+}
