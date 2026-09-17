@@ -309,7 +309,7 @@ async function loadFlowcharts(selected = "Sequence") {
         });
     }
 
-    populateMenu(flowcharts, `${selected} Flowcharts`);
+    populateMenu(flowcharts, `${selected} Constructs`);
 }
 
 async function loadProjects(selected = "School") {
@@ -356,7 +356,15 @@ menuSearch.oninput = () => {
     });
 };
 
-document.addEventListener("DOMContentLoaded", ()=> {
+document.addEventListener("DOMContentLoaded", () => {
     const name = window.location.hash.substring(1) || "";
-    console.log(name);
+    switch (name) {
+        case "Sequence":
+        case "Selection":
+        case "Iteration":
+            loadFlowcharts(name);
+            break;
+        case "Profile":
+            break;
+    }
 })
