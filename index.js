@@ -350,6 +350,16 @@ document.getElementById("about-button").onclick = () => {
     document.getElementById("main-menu").style.display = "none";
 };
 
+document.getElementById("quit").onclick = () => {
+    const url = 'https://sites.google.com/view/ditizens/individual-projects';
+    if (window.location !== window.parent.location) {
+        window.open(url);
+    }
+    else {
+        location.href= url;
+    }
+}
+
 menuSearch.oninput = () => {
     Array.from(menuList.getElementsByClassName("content")).forEach((content) => {
         content.style.display = content.innerHTML.includes(menuSearch.value) ? "flex" : "none";
