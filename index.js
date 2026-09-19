@@ -380,3 +380,15 @@ document.addEventListener("DOMContentLoaded", () => {
             break;
     }
 })
+const videoResume = document.querySelector(".video-resume");
+videoResume.addEventListener("play", () => {
+  menuMusic.muted = true
+})
+
+videoResume.addEventListener("pause", () => {
+  menuMusic.muted = false
+})
+
+videoResume.addEventListener("ended", () => {
+  menuMusic.muted = false
+})
