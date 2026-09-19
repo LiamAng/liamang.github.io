@@ -280,6 +280,7 @@
         img {
           max-width: 100%;
           max-height: 100%;
+          image-rendering: optimizeSpeed;
         }
 
         button {
@@ -326,6 +327,7 @@
 
       &.selected {
         border-image-source: var(--tf-bg-hover);
+        image-rendering: pixelated;
         border-image-slice: 1 fill;
         border-image-width: 2px;
         border-image-repeat: stretch;
