@@ -363,24 +363,24 @@
       }
     }
 
-    .about-icon {
+    .video-resume {
       image-rendering: pixelated;
-      width: 167px;
-      aspect-ratio: 1;
-      flex-shrink: 0;
-      content: var(--abt-icon);
+      width: 500px;
+      max-width: 90%;
     }
 
     .main-infos {
+      padding-top: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: start;
       gap: 40px;
-      max-width: 600px;
+      width: 900px;
+      max-width: 90%;
       margin: 0 auto;
       padding-inline: 16px;
-      @media (max-width: 500px) {
+      @media (max-width: 1000px) {
         flex-direction: column;
         p {
           margin-inline: 10px;
@@ -539,12 +539,14 @@
     <div class="menu-container column">
       <div class="scroll-container">
         <div class="main-infos">
-          <img class="about-icon">
+          <video controls class="video-resume">
+            <source src="/assets/video_resume.mp4" type="video/mp4" />
+          </video>
           <div class="about-me">
             <p>Name: Liam Richardson C. Ang</p>
             <p id="age"></p>
             <p>Birthday: February 1 2008 7:39 am</p>
-            <p>Hobbies/Interests: Doom scrolling, Coding, Native Modding, Technical Minecraft</p>
+            <p>Hobbies/Interests: Coding, Native Modding, Minecraft, Terraria</p>
           </div>
         </div>
         <div class="socials">
