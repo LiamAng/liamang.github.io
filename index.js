@@ -408,8 +408,10 @@ videoResume.addEventListener("ended", () => {
 function showPage(url, onback) {
     const page = document.getElementById("page-screen");
     page.style.display = "flex";
-    document.getElementById("subwindow").src = url;
+    const subWindow = document.getElementById("subwindow");
+    subWindow.src = url;
     page.querySelector(".mc-button").onclick = () => {
+        subWindow.src = "";
         onback()
         page.style.display = "none";
     }
