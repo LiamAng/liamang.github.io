@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "settings": {
+    "title": "Even Number",
+    "description": "Display all even numbers from 2 to 20.",
+    "decisionBranchLabels": "true-false",
+    "readOnly": true,
+    "snap": true,
+    "gridSize": 40,
+    "guides": true,
+    "showGrid": true,
+    "showSteps": false,
+    "showStepNumbers": true,
+    "showShapeContentInSteps": true,
+    "compressSimulationTable": true,
+    "collapseConsecutiveConditions": true,
+    "collapseOtherSteps": true,
+    "autorun": true,
+    "inputs": {},
+    "simulationRatio": 0.32,
+    "valueAccuracy": 2,
+    "simulationStepDelay": 100
+  },
+  "shapes": [
+    {
+      "id": "shape-45",
+      "type": "terminator",
+      "x": -80,
+      "y": -360,
+      "width": 180,
+      "height": 80,
+      "text": "Start",
+      "programCode": "",
+      "terminatorType": "start"
+    },
+    {
+      "id": "shape-46",
+      "type": "initialization",
+      "x": -80,
+      "y": -240,
+      "width": 180,
+      "height": 80,
+      "text": "Count = 0",
+      "programCode": "",
+      "variables": [
+        {
+          "name": "Count",
+          "type": "number",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "shape-47",
+      "type": "process",
+      "x": -70,
+      "y": -120,
+      "width": 160,
+      "height": 80,
+      "text": "Count = Count + 2",
+      "programCode": "Count = Count + 2"
+    },
+    {
+      "id": "shape-48",
+      "type": "input-output",
+      "x": -80,
+      "y": 0,
+      "width": 180,
+      "height": 80,
+      "text": "Print Count",
+      "programCode": "Count",
+      "inputOutputType": "output"
+    },
+    {
+      "id": "shape-49",
+      "type": "decision",
+      "x": -91.88958644866943,
+      "y": 120,
+      "width": 203.77917289733887,
+      "height": 107.55834579467773,
+      "text": "is Count == 20",
+      "programCode": "Count == 20"
+    },
+    {
+      "id": "shape-50",
+      "type": "terminator",
+      "x": -80,
+      "y": 280,
+      "width": 180,
+      "height": 80,
+      "text": "End",
+      "programCode": "",
+      "terminatorType": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from": "shape-45",
+      "to": "shape-46",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-46",
+      "to": "shape-47",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-47",
+      "to": "shape-48",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-48",
+      "to": "shape-49",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-49",
+      "to": "shape-50",
+      "direction": "s",
+      "role": "next",
+      "label": "Yes"
+    },
+    {
+      "from": "shape-49",
+      "to": "shape-47",
+      "direction": "e",
+      "role": "altNext",
+      "label": "No"
+    }
+  ]
+}

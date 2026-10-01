@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "settings": {
+    "title": "Multiplication Table",
+    "description": "Input a number and display its multiplication table from 1 to 10",
+    "decisionBranchLabels": "true-false",
+    "readOnly": true,
+    "snap": true,
+    "gridSize": 40,
+    "guides": true,
+    "showGrid": true,
+    "showSteps": false,
+    "showStepNumbers": true,
+    "showShapeContentInSteps": true,
+    "compressSimulationTable": true,
+    "collapseConsecutiveConditions": true,
+    "collapseOtherSteps": true,
+    "autorun": true,
+    "inputs": {
+      "Number": 6
+    },
+    "simulationRatio": 0.4713541666666667,
+    "valueAccuracy": 2,
+    "simulationStepDelay": 100
+  },
+  "shapes": [
+    {
+      "id": "shape-58",
+      "type": "terminator",
+      "x": -80,
+      "y": -400,
+      "width": 180,
+      "height": 80,
+      "text": "Start",
+      "programCode": "",
+      "terminatorType": "start"
+    },
+    {
+      "id": "shape-59",
+      "type": "input-output",
+      "x": -80,
+      "y": -280,
+      "width": 180,
+      "height": 80,
+      "text": "Input\nNumber",
+      "programCode": "",
+      "variables": [
+        {
+          "name": "Number",
+          "type": "number"
+        }
+      ],
+      "inputOutputType": "input"
+    },
+    {
+      "id": "shape-60",
+      "type": "initialization",
+      "x": -80,
+      "y": -160,
+      "width": 180,
+      "height": 80,
+      "text": "Count = 0\nResult = 0",
+      "programCode": "",
+      "variables": [
+        {
+          "name": "Count",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Result",
+          "type": "number",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "shape-61",
+      "type": "process",
+      "x": -82.5,
+      "y": -40,
+      "width": 185,
+      "height": 80,
+      "text": "Count = Count + 1\nResult = Number * Count",
+      "programCode": "Count = Count + 1\nResult = Number * Count"
+    },
+    {
+      "id": "shape-62",
+      "type": "input-output",
+      "x": -80,
+      "y": 80,
+      "width": 180,
+      "height": 80,
+      "text": "Print\nResult",
+      "programCode": "Result",
+      "inputOutputType": "output"
+    },
+    {
+      "id": "shape-63",
+      "type": "decision",
+      "x": -91.88958644866943,
+      "y": 200,
+      "width": 203.77917289733887,
+      "height": 107.55834579467773,
+      "text": "is Count == 10",
+      "programCode": "Count == 10"
+    },
+    {
+      "id": "shape-64",
+      "type": "terminator",
+      "x": -80,
+      "y": 360,
+      "width": 180,
+      "height": 80,
+      "text": "End",
+      "programCode": "",
+      "terminatorType": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from": "shape-58",
+      "to": "shape-59",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-59",
+      "to": "shape-60",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-60",
+      "to": "shape-61",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-61",
+      "to": "shape-62",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-62",
+      "to": "shape-63",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-63",
+      "to": "shape-64",
+      "direction": "s",
+      "role": "next",
+      "label": "True"
+    },
+    {
+      "from": "shape-63",
+      "to": "shape-61",
+      "direction": "e",
+      "role": "altNext",
+      "label": "False"
+    }
+  ]
+}

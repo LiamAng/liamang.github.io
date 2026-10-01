@@ -1,0 +1,292 @@
+{
+  "version": 1,
+  "settings": {
+    "title": "Count Positive and Negative Numbers",
+    "description": "Input ten numbers. Count and display how many are positive, negative, and zero.",
+    "decisionBranchLabels": "true-false",
+    "readOnly": true,
+    "snap": true,
+    "gridSize": 40,
+    "guides": true,
+    "showGrid": true,
+    "showSteps": false,
+    "showStepNumbers": true,
+    "showShapeContentInSteps": true,
+    "compressSimulationTable": true,
+    "collapseConsecutiveConditions": true,
+    "collapseOtherSteps": true,
+    "autorun": true,
+    "inputs": {
+      "Number": [
+        0,
+        -20,
+        50,
+        67,
+        -97,
+        -40,
+        0,
+        50,
+        2132,
+        -2193
+      ]
+    },
+    "simulationRatio": 0.53,
+    "simulationStepContentMaxWidth": 200,
+    "valueAccuracy": 2,
+    "simulationStepDelay": 0
+  },
+  "shapes": [
+    {
+      "id": "shape-77",
+      "type": "terminator",
+      "x": -117.00001239776611,
+      "y": -320,
+      "width": 180,
+      "height": 80,
+      "text": "Start",
+      "programCode": "",
+      "terminatorType": "start"
+    },
+    {
+      "id": "shape-78",
+      "type": "initialization",
+      "x": -126.0000467300415,
+      "y": -204.00001525878906,
+      "width": 198.00006866455078,
+      "height": 88.00003051757812,
+      "text": "Count = 0\nPositive = 0\nNegative = 0\nZeroes = 0",
+      "programCode": "",
+      "variables": [
+        {
+          "name": "Count",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Positive",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Negative",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Zeroes",
+          "type": "number",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "shape-79",
+      "type": "input-output",
+      "x": -117.00001239776611,
+      "y": -80,
+      "width": 180,
+      "height": 80,
+      "text": "Input\nNumber",
+      "programCode": "",
+      "variables": [
+        {
+          "name": "Number",
+          "type": "number"
+        }
+      ],
+      "inputOutputType": "input"
+    },
+    {
+      "id": "shape-80",
+      "type": "decision",
+      "x": -129.0000343322754,
+      "y": 40,
+      "width": 204.00004386901855,
+      "height": 108.00008773803711,
+      "text": "is Number > 0",
+      "programCode": "Number > 0"
+    },
+    {
+      "id": "shape-81",
+      "type": "process",
+      "x": 160,
+      "y": 54.000043869018555,
+      "width": 200,
+      "height": 80,
+      "text": "Positive = Positive  + 1",
+      "programCode": "Positive = Positive  + 1"
+    },
+    {
+      "id": "shape-82",
+      "type": "decision",
+      "x": -129.0000343322754,
+      "y": 200,
+      "width": 204.00004386901855,
+      "height": 108.00008773803711,
+      "text": "is Number < 0",
+      "programCode": "Number < 0"
+    },
+    {
+      "id": "shape-83",
+      "type": "process",
+      "x": 161.88958644866943,
+      "y": 214.00004386901853,
+      "width": 200,
+      "height": 80,
+      "text": "Negative = Negative + 1",
+      "programCode": "Negative = Negative + 1"
+    },
+    {
+      "id": "shape-84",
+      "type": "process",
+      "x": 160,
+      "y": 360,
+      "width": 200,
+      "height": 80,
+      "text": "Zeroes = Zeroes + 1",
+      "programCode": "Zeroes = Zeroes + 1"
+    },
+    {
+      "id": "shape-85",
+      "type": "input-output",
+      "x": 352.88955211639404,
+      "y": -324.00001525878906,
+      "width": 287.11044788360596,
+      "height": 88.00003051757812,
+      "text": "Print\n\"Positives: \" + Positive +\n\", Negatives: \" + Negative + \n\",  Zeroes: \" + Zeroes\n",
+      "programCode": "\"Positives: \" + Positive + \", Negatives: \" + Negative + \", Zeroes: \" + Zeroes",
+      "inputOutputType": "output"
+    },
+    {
+      "id": "shape-86",
+      "type": "process",
+      "x": 440,
+      "y": 214.00004386901855,
+      "width": 200,
+      "height": 80,
+      "text": "Count = Count + 1",
+      "programCode": "Count = Count + 1"
+    },
+    {
+      "id": "shape-87",
+      "type": "decision",
+      "x": 350,
+      "y": -93.77917289733887,
+      "width": 203.77917289733887,
+      "height": 107.55834579467773,
+      "text": "is Count == 10",
+      "programCode": "Count == 10"
+    },
+    {
+      "id": "shape-88",
+      "type": "terminator",
+      "x": 120,
+      "y": -320,
+      "width": 180,
+      "height": 80,
+      "text": "End",
+      "programCode": "",
+      "terminatorType": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from": "shape-77",
+      "to": "shape-78",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-78",
+      "to": "shape-79",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-80",
+      "to": "shape-82",
+      "direction": "s",
+      "role": "altNext",
+      "label": "False"
+    },
+    {
+      "from": "shape-80",
+      "to": "shape-81",
+      "direction": "e",
+      "role": "next",
+      "label": "True"
+    },
+    {
+      "from": "shape-82",
+      "to": "shape-83",
+      "direction": "e",
+      "role": "next",
+      "label": "True"
+    },
+    {
+      "from": "shape-82",
+      "to": "shape-84",
+      "direction": "s",
+      "role": "altNext",
+      "label": "False"
+    },
+    {
+      "from": "shape-79",
+      "to": "shape-80",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-83",
+      "to": "shape-86",
+      "direction": "e",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-84",
+      "to": "shape-86",
+      "direction": "e",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-81",
+      "to": "shape-86",
+      "direction": "e",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-86",
+      "to": "shape-87",
+      "direction": "e",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-87",
+      "to": "shape-85",
+      "direction": "n",
+      "role": "next",
+      "label": "True"
+    },
+    {
+      "from": "shape-85",
+      "to": "shape-88",
+      "direction": "w",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-87",
+      "to": "shape-79",
+      "direction": "w",
+      "role": "altNext",
+      "label": "False"
+    }
+  ]
+}

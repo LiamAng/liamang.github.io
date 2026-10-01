@@ -1,0 +1,166 @@
+{
+  "version": 1,
+  "settings": {
+    "title": "Factorial of a Number",
+    "description": "Input a nonnegative integer N. Compute and display its factorial",
+    "decisionBranchLabels": "true-false",
+    "readOnly": true,
+    "snap": true,
+    "gridSize": 40,
+    "guides": true,
+    "showGrid": true,
+    "showSteps": false,
+    "showStepNumbers": true,
+    "showShapeContentInSteps": true,
+    "compressSimulationTable": true,
+    "collapseConsecutiveConditions": true,
+    "collapseOtherSteps": true,
+    "autorun": true,
+    "inputs": {
+      "Number": 5
+    },
+    "simulationRatio": 0.32,
+    "valueAccuracy": 2,
+    "simulationStepDelay": 100
+  },
+  "shapes": [
+    {
+      "id": "shape-91",
+      "type": "terminator",
+      "x": -80,
+      "y": -400,
+      "width": 180,
+      "height": 80,
+      "text": "Start",
+      "programCode": "",
+      "terminatorType": "start"
+    },
+    {
+      "id": "shape-92",
+      "type": "input-output",
+      "x": -80,
+      "y": -280,
+      "width": 180,
+      "height": 80,
+      "text": "Input\nNumber",
+      "programCode": "",
+      "variables": [
+        {
+          "name": "Number",
+          "type": "number"
+        }
+      ],
+      "inputOutputType": "input"
+    },
+    {
+      "id": "shape-93",
+      "type": "initialization",
+      "x": -110,
+      "y": -160,
+      "width": 240,
+      "height": 80,
+      "text": "Factorial = Number",
+      "programCode": "",
+      "variables": [
+        {
+          "name": "Factorial",
+          "type": "variable",
+          "value": "Number"
+        }
+      ]
+    },
+    {
+      "id": "shape-94",
+      "type": "process",
+      "x": -166.25,
+      "y": -40,
+      "width": 352.5,
+      "height": 80,
+      "text": "Factorial = Factorial * (Number - 1)\nNumber = Number - 1",
+      "programCode": "Factorial = Factorial * (Number - 1)\nNumber = Number - 1"
+    },
+    {
+      "id": "shape-95",
+      "type": "decision",
+      "x": -90,
+      "y": 80,
+      "width": 200,
+      "height": 100,
+      "text": "Number == 1",
+      "programCode": "Number == 1"
+    },
+    {
+      "id": "shape-96",
+      "type": "input-output",
+      "x": -80,
+      "y": 240,
+      "width": 180,
+      "height": 80,
+      "text": "Print Factorial",
+      "programCode": "Factorial",
+      "inputOutputType": "output"
+    },
+    {
+      "id": "shape-97",
+      "type": "terminator",
+      "x": -80,
+      "y": 360,
+      "width": 180,
+      "height": 80,
+      "text": "End",
+      "programCode": "",
+      "terminatorType": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from": "shape-91",
+      "to": "shape-92",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-92",
+      "to": "shape-93",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-93",
+      "to": "shape-94",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-94",
+      "to": "shape-95",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-95",
+      "to": "shape-96",
+      "direction": "s",
+      "role": "next",
+      "label": "Yes"
+    },
+    {
+      "from": "shape-96",
+      "to": "shape-97",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-95",
+      "to": "shape-94",
+      "direction": "e",
+      "role": "altNext",
+      "label": "No"
+    }
+  ]
+}

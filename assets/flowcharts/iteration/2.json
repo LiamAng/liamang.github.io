@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "settings": {
+    "title": "Numbers from 1 to 10",
+    "description": "Display the numbers from 1 to 10.",
+    "decisionBranchLabels": "true-false",
+    "readOnly": true,
+    "snap": true,
+    "gridSize": 40,
+    "guides": true,
+    "showGrid": true,
+    "showSteps": false,
+    "showStepNumbers": true,
+    "showShapeContentInSteps": true,
+    "compressSimulationTable": true,
+    "collapseConsecutiveConditions": true,
+    "collapseOtherSteps": true,
+    "autorun": true,
+    "inputs": {},
+    "simulationRatio": 0.32,
+    "valueAccuracy": 2,
+    "simulationStepDelay": 100
+  },
+  "shapes": [
+    {
+      "id": "shape-27",
+      "type": "terminator",
+      "x": -80,
+      "y": -360,
+      "width": 180,
+      "height": 80,
+      "text": "Start",
+      "programCode": "",
+      "terminatorType": "start"
+    },
+    {
+      "id": "shape-28",
+      "type": "initialization",
+      "x": -80,
+      "y": -240,
+      "width": 180,
+      "height": 80,
+      "text": "Count = 0",
+      "programCode": "",
+      "variables": [
+        {
+          "name": "Count",
+          "type": "number",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "shape-29",
+      "type": "process",
+      "x": -70,
+      "y": -120,
+      "width": 160,
+      "height": 80,
+      "text": "Count = Count + 1",
+      "programCode": "Count = Count + 1"
+    },
+    {
+      "id": "shape-30",
+      "type": "input-output",
+      "x": -80,
+      "y": 0,
+      "width": 180,
+      "height": 80,
+      "text": "Print Count",
+      "programCode": "Count",
+      "inputOutputType": "output"
+    },
+    {
+      "id": "shape-31",
+      "type": "decision",
+      "x": -91.88958644866943,
+      "y": 120,
+      "width": 203.77917289733887,
+      "height": 107.55834579467773,
+      "text": "is Count == 10",
+      "programCode": "Count == 10"
+    },
+    {
+      "id": "shape-32",
+      "type": "terminator",
+      "x": -80,
+      "y": 280,
+      "width": 180,
+      "height": 80,
+      "text": "End",
+      "programCode": "",
+      "terminatorType": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from": "shape-27",
+      "to": "shape-28",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-28",
+      "to": "shape-29",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-29",
+      "to": "shape-30",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-30",
+      "to": "shape-31",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-31",
+      "to": "shape-32",
+      "direction": "s",
+      "role": "next",
+      "label": "Yes"
+    },
+    {
+      "from": "shape-31",
+      "to": "shape-29",
+      "direction": "e",
+      "role": "altNext",
+      "label": "No"
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "settings": {
+    "title": "Password Verification",
+    "description": "Ask the user to enter a password repeatedly until the correct password, PUP2026, is entered. Display “Access Granted” afterward.",
+    "decisionBranchLabels": "yes-no",
+    "readOnly": true,
+    "snap": true,
+    "gridSize": 40,
+    "guides": true,
+    "showGrid": true,
+    "showSteps": false,
+    "showStepNumbers": true,
+    "showShapeContentInSteps": true,
+    "compressSimulationTable": true,
+    "collapseConsecutiveConditions": true,
+    "collapseOtherSteps": true,
+    "autorun": true,
+    "inputs": {
+      "Password": [
+        "PUP",
+        "PUPT",
+        "PUP2026"
+      ]
+    },
+    "simulationRatio": 0.32,
+    "simulationStepContentMaxWidth": 200,
+    "valueAccuracy": 2,
+    "simulationStepDelay": 100
+  },
+  "shapes": [
+    {
+      "id": "shape-89",
+      "type": "terminator",
+      "x": -120,
+      "y": -400,
+      "width": 180,
+      "height": 80,
+      "text": "Start",
+      "programCode": "",
+      "terminatorType": "start"
+    },
+    {
+      "id": "shape-90",
+      "type": "input-output",
+      "x": -120,
+      "y": -160,
+      "width": 180,
+      "height": 80,
+      "text": "Input\nPassword",
+      "programCode": "",
+      "variables": [
+        {
+          "name": "Password",
+          "type": "string"
+        }
+      ],
+      "inputOutputType": "input"
+    },
+    {
+      "id": "shape-91",
+      "type": "decision",
+      "x": -210,
+      "y": -40,
+      "width": 360,
+      "height": 120,
+      "text": "Is\nPassword == \"PUP2026\"",
+      "programCode": "Password == \"PUP2026\""
+    },
+    {
+      "id": "shape-92",
+      "type": "input-output",
+      "x": -120,
+      "y": 160,
+      "width": 180,
+      "height": 80,
+      "text": "Print\n\"Access Granted\"",
+      "programCode": "\"Access Granted\"",
+      "inputOutputType": "output"
+    },
+    {
+      "id": "shape-93",
+      "type": "input-output",
+      "x": -120,
+      "y": -280,
+      "width": 180,
+      "height": 80,
+      "text": "Print\n\"Enter password: \"",
+      "programCode": "\"Enter password: \"",
+      "inputOutputType": "output"
+    },
+    {
+      "id": "shape-94",
+      "type": "terminator",
+      "x": -120,
+      "y": 280,
+      "width": 180,
+      "height": 80,
+      "text": "End",
+      "programCode": "",
+      "terminatorType": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from": "shape-90",
+      "to": "shape-91",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-91",
+      "to": "shape-92",
+      "direction": "s",
+      "role": "next",
+      "label": "Yes"
+    },
+    {
+      "from": "shape-89",
+      "to": "shape-93",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-92",
+      "to": "shape-94",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-93",
+      "to": "shape-90",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-91",
+      "to": "shape-93",
+      "direction": "e",
+      "role": "altNext",
+      "label": "No",
+      "waypoints": [
+        {
+          "ox": 228.2,
+          "oy": -130,
+          "dir": "n"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "version": 1,
+  "settings": {
+    "title": "Grade Average",
+    "description": "Input five grades. Compute and display their total and average.",
+    "decisionBranchLabels": "true-false",
+    "readOnly": true,
+    "snap": true,
+    "gridSize": 40,
+    "guides": true,
+    "showGrid": true,
+    "showSteps": false,
+    "showStepNumbers": true,
+    "showShapeContentInSteps": true,
+    "compressSimulationTable": true,
+    "collapseConsecutiveConditions": true,
+    "collapseOtherSteps": true,
+    "autorun": true,
+    "inputs": {
+      "Grade": [
+        67,
+        90,
+        98,
+        88,
+        78
+      ]
+    },
+    "simulationRatio": 0.32,
+    "simulationStepContentMaxWidth": 200,
+    "valueAccuracy": 2,
+    "simulationStepDelay": 100
+  },
+  "shapes": [
+    {
+      "id": "shape-69",
+      "type": "terminator",
+      "x": -120,
+      "y": -360,
+      "width": 180,
+      "height": 80,
+      "text": "Start",
+      "programCode": "",
+      "terminatorType": "start"
+    },
+    {
+      "id": "shape-70",
+      "type": "initialization",
+      "x": -120,
+      "y": -240,
+      "width": 180,
+      "height": 80,
+      "text": "Count = 0\nTotal = 0",
+      "programCode": "",
+      "variables": [
+        {
+          "name": "Count",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Total",
+          "type": "number",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "shape-71",
+      "type": "input-output",
+      "x": -120,
+      "y": -120,
+      "width": 180,
+      "height": 80,
+      "text": "Input\nGrade",
+      "programCode": "",
+      "variables": [
+        {
+          "name": "Grade",
+          "type": "number"
+        }
+      ],
+      "inputOutputType": "input"
+    },
+    {
+      "id": "shape-72",
+      "type": "process",
+      "x": -110,
+      "y": 0,
+      "width": 160,
+      "height": 80,
+      "text": "Count = Count + 1\nTotal = Total + Grade",
+      "programCode": "Count = Count + 1\nTotal = Total + Grade"
+    },
+    {
+      "id": "shape-73",
+      "type": "decision",
+      "x": -132.00002193450928,
+      "y": 120,
+      "width": 204.00004386901855,
+      "height": 108.00008773803711,
+      "text": "Is Count == 5",
+      "programCode": "Count == 5"
+    },
+    {
+      "id": "shape-74",
+      "type": "process",
+      "x": -110,
+      "y": 280,
+      "width": 160,
+      "height": 80,
+      "text": "Avg = Total / 5",
+      "programCode": "let Avg = Total / 5"
+    },
+    {
+      "id": "shape-75",
+      "type": "input-output",
+      "x": -190,
+      "y": 400,
+      "width": 320,
+      "height": 80,
+      "text": "Print\n\"Total: \" + Total + \", Average: \" + Avg",
+      "programCode": "\"Total: \" + Total + \", Average: \" + Avg",
+      "inputOutputType": "output"
+    },
+    {
+      "id": "shape-76",
+      "type": "terminator",
+      "x": -120,
+      "y": 520,
+      "width": 180,
+      "height": 80,
+      "text": "End",
+      "programCode": "",
+      "terminatorType": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from": "shape-69",
+      "to": "shape-70",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-70",
+      "to": "shape-71",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-71",
+      "to": "shape-72",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-72",
+      "to": "shape-73",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-73",
+      "to": "shape-74",
+      "direction": "s",
+      "role": "next",
+      "label": "True"
+    },
+    {
+      "from": "shape-74",
+      "to": "shape-75",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-73",
+      "to": "shape-71",
+      "direction": "e",
+      "role": "altNext",
+      "label": "False",
+      "waypoints": [
+        {
+          "ox": 133.2,
+          "oy": -127.00004386901855,
+          "dir": "n"
+        }
+      ]
+    },
+    {
+      "from": "shape-75",
+      "to": "shape-76",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    }
+  ]
+}

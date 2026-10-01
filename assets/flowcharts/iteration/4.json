@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "settings": {
+    "title": "Sum of Numbers",
+    "description": "Input a positive integer N. Compute and display the sum of all integers from 1 to N.",
+    "decisionBranchLabels": "true-false",
+    "readOnly": true,
+    "snap": true,
+    "gridSize": 40,
+    "guides": true,
+    "showGrid": true,
+    "showSteps": false,
+    "showStepNumbers": true,
+    "showShapeContentInSteps": true,
+    "compressSimulationTable": true,
+    "collapseConsecutiveConditions": true,
+    "collapseOtherSteps": true,
+    "autorun": true,
+    "inputs": {
+      "N": 7
+    },
+    "simulationRatio": 0.32,
+    "valueAccuracy": 2,
+    "simulationStepDelay": 100
+  },
+  "shapes": [
+    {
+      "id": "shape-51",
+      "type": "terminator",
+      "x": -80,
+      "y": -360,
+      "width": 180,
+      "height": 80,
+      "text": "Start",
+      "programCode": "",
+      "terminatorType": "start"
+    },
+    {
+      "id": "shape-52",
+      "type": "input-output",
+      "x": -80,
+      "y": -240,
+      "width": 180,
+      "height": 80,
+      "text": "Input N",
+      "programCode": "",
+      "variables": [
+        {
+          "name": "N",
+          "type": "number"
+        }
+      ],
+      "inputOutputType": "input"
+    },
+    {
+      "id": "shape-53",
+      "type": "initialization",
+      "x": -80,
+      "y": -120,
+      "width": 180,
+      "height": 80,
+      "text": "Total = 0\nCount = 0",
+      "programCode": "",
+      "variables": [
+        {
+          "name": "Total",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Count",
+          "type": "number",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "shape-54",
+      "type": "process",
+      "x": -70,
+      "y": 0,
+      "width": 160,
+      "height": 80,
+      "text": "Count = Count + 1\nTotal = Total + Count",
+      "programCode": "Count = Count + 1\nTotal = Total + Count"
+    },
+    {
+      "id": "shape-55",
+      "type": "decision",
+      "x": -91.88958644866943,
+      "y": 120,
+      "width": 203.77917289733887,
+      "height": 107.55834579467773,
+      "text": "is Count == N",
+      "programCode": "Count == N"
+    },
+    {
+      "id": "shape-56",
+      "type": "input-output",
+      "x": -80,
+      "y": 280,
+      "width": 180,
+      "height": 80,
+      "text": "Print\nTotal",
+      "programCode": "Total",
+      "inputOutputType": "output"
+    },
+    {
+      "id": "shape-57",
+      "type": "terminator",
+      "x": -80,
+      "y": 400,
+      "width": 180,
+      "height": 80,
+      "text": "End",
+      "programCode": "",
+      "terminatorType": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from": "shape-51",
+      "to": "shape-52",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-52",
+      "to": "shape-53",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-53",
+      "to": "shape-54",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-54",
+      "to": "shape-55",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-55",
+      "to": "shape-54",
+      "direction": "e",
+      "role": "altNext",
+      "label": "False"
+    },
+    {
+      "from": "shape-55",
+      "to": "shape-56",
+      "direction": "s",
+      "role": "next",
+      "label": "True"
+    },
+    {
+      "from": "shape-56",
+      "to": "shape-57",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    }
+  ]
+}

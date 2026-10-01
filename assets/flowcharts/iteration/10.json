@@ -1,0 +1,210 @@
+{
+  "version": 1,
+  "settings": {
+    "title": "Number-Guessing Activity",
+    "description": "Set the secret number to 25. Repeatedly ask the user to enter a number until it matches the secret number. Display whether each incorrect guess is too high or too low.",
+    "decisionBranchLabels": "yes-no",
+    "readOnly": true,
+    "snap": true,
+    "gridSize": 40,
+    "guides": true,
+    "showGrid": true,
+    "showSteps": false,
+    "showStepNumbers": true,
+    "showShapeContentInSteps": true,
+    "compressSimulationTable": true,
+    "collapseConsecutiveConditions": true,
+    "collapseOtherSteps": true,
+    "autorun": true,
+    "inputs": {
+      "Number": [
+        7,
+        67,
+        18,
+        28,
+        25
+      ]
+    },
+    "simulationRatio": 0.3177083333333333,
+    "simulationStepContentMaxWidth": 200,
+    "valueAccuracy": 2,
+    "simulationStepDelay": 0
+  },
+  "shapes": [
+    {
+      "id": "shape-7",
+      "type": "terminator",
+      "x": -120,
+      "y": -400,
+      "width": 180,
+      "height": 80,
+      "text": "Start",
+      "programCode": "",
+      "terminatorType": "start"
+    },
+    {
+      "id": "shape-8",
+      "type": "input-output",
+      "x": -120,
+      "y": -160,
+      "width": 180,
+      "height": 80,
+      "text": "Input\nNumber",
+      "programCode": "",
+      "variables": [
+        {
+          "name": "Number",
+          "type": "number"
+        }
+      ],
+      "inputOutputType": "input"
+    },
+    {
+      "id": "shape-9",
+      "type": "input-output",
+      "x": -120,
+      "y": 160,
+      "width": 180,
+      "height": 80,
+      "text": "Print\n\"Correct\"",
+      "programCode": "\"Correct\"",
+      "inputOutputType": "output"
+    },
+    {
+      "id": "shape-10",
+      "type": "input-output",
+      "x": -120,
+      "y": -280,
+      "width": 180,
+      "height": 80,
+      "text": "Print\n\"Enter number: \"",
+      "programCode": "\"Enter number: \"",
+      "inputOutputType": "output"
+    },
+    {
+      "id": "shape-11",
+      "type": "terminator",
+      "x": -120,
+      "y": 280,
+      "width": 180,
+      "height": 80,
+      "text": "End",
+      "programCode": "",
+      "terminatorType": "end"
+    },
+    {
+      "id": "shape-12",
+      "type": "decision",
+      "x": -152.00002193450928,
+      "y": -28.00008773803711,
+      "width": 244.00004386901858,
+      "height": 108.00008773803711,
+      "text": "Is Number == 25",
+      "programCode": "Number == 25"
+    },
+    {
+      "id": "shape-13",
+      "type": "decision",
+      "x": 187.99997806549072,
+      "y": 91.99991226196289,
+      "width": 204.00004386901855,
+      "height": 108.00008773803711,
+      "text": "Is Number > 25",
+      "programCode": "Number > 25"
+    },
+    {
+      "id": "shape-14",
+      "type": "input-output",
+      "x": 370.60004153252066,
+      "y": -28.00008773803711,
+      "width": 212.00002193450928,
+      "height": 80,
+      "text": "Print\nNumber + \" is too high\"",
+      "programCode": "Number + \" is too high\"",
+      "inputOutputType": "output"
+    },
+    {
+      "id": "shape-15",
+      "type": "input-output",
+      "x": 187.99997806549072,
+      "y": -28.00008773803711,
+      "width": 192.00002193450928,
+      "height": 80,
+      "text": "Print\nNumber + \" is too low\"",
+      "programCode": "Number + \" is too low\"",
+      "inputOutputType": "output"
+    }
+  ],
+  "connections": [
+    {
+      "from": "shape-7",
+      "to": "shape-10",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-9",
+      "to": "shape-11",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-10",
+      "to": "shape-8",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-8",
+      "to": "shape-12",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-12",
+      "to": "shape-9",
+      "direction": "s",
+      "role": "next",
+      "label": "Yes"
+    },
+    {
+      "from": "shape-12",
+      "to": "shape-13",
+      "direction": "e",
+      "role": "altNext",
+      "label": "No"
+    },
+    {
+      "from": "shape-13",
+      "to": "shape-14",
+      "direction": "e",
+      "role": "next",
+      "label": "Yes"
+    },
+    {
+      "from": "shape-13",
+      "to": "shape-15",
+      "direction": "n",
+      "role": "altNext",
+      "label": "No"
+    },
+    {
+      "from": "shape-15",
+      "to": "shape-8",
+      "direction": "n",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-14",
+      "to": "shape-8",
+      "direction": "n",
+      "role": "next",
+      "label": ""
+    }
+  ]
+}

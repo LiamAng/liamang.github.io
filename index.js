@@ -259,8 +259,13 @@ function populateMenu(contents, title) {
             content.classList.add("content");
 
             const open = () => {
-                window.open(stuff[4]);
+                const menuScreen = document.getElementById("menu-screen");
+                menuScreen.style.display = "none";
                 clearMenuSelection();
+                var back = () => {
+                    menuScreen.style.display = "flex";
+                };
+                showPage(stuff[4], back);
             };
 
             content.innerHTML = `
@@ -285,7 +290,6 @@ function populateMenu(contents, title) {
             openButton.addEventListener("click", (e) => {
                 e.stopImmediatePropagation();
                 open();
-                playClick();
             });
 
             menuList.appendChild(content);
@@ -304,8 +308,14 @@ async function loadFlowcharts(selected = "Sequence") {
     if (response.ok) {
         const flowchartIndex = await response.json();
         flowchartIndex.forEach((title, index) => {
-            const url = `${baseUrl}/${index + 1}.png`;
-            flowcharts.push([url, `Flowchart ${index + 1}`, title, selected, url]);
+            if (selected == "Iteration") {
+                const jsonUrl = `https://liamang.github.io/${baseUrl}/${index + 1}.json`;
+                const url = `https://liamang.github.io/flowcraft/?hideSettings&url=${jsonUrl}`
+                flowcharts.push([url, `Flowchart ${index + 1}`, title, selected, url]);
+            } else {
+                const url = `${baseUrl}/${index + 1}.png`;
+                flowcharts.push([url, `Flowchart ${index + 1}`, title, selected, url]);
+            }
         });
     }
 
@@ -326,7 +336,7 @@ function setupTabs(tabTitles, loadFn) {
         const tab = document.createElement("button");
         tab.classList.add("mc-button");
         tab.innerHTML = tabTitle;
-        tab.onclick = () => { loadFn(tabTitle); playClick(); };
+        tab.onclick = () => { loadFn(tabTitle); };
         tabs.appendChild(tab);
     });
     loadFn();
@@ -392,3 +402,14 @@ videoResume.addEventListener("pause", () => {
 videoResume.addEventListener("ended", () => {
   menuMusic.muted = false
 })
+
+function showPage(url, onback) {
+    const page = document.getElementById("page-screen");
+    page.style.display = "flex";
+    document.getElementById("subwindow").src = url;
+    page.querySelector(".mc-button").onclick = () => {
+        onback()
+        page.style.display = "none";
+    }
+    
+}
