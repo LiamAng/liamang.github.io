@@ -37,7 +37,7 @@
   },
   "shapes": [
     {
-      "id": "shape-77",
+      "id": "shape-49",
       "type": "terminator",
       "x": -117.00001239776611,
       "y": -320,
@@ -48,7 +48,7 @@
       "terminatorType": "start"
     },
     {
-      "id": "shape-78",
+      "id": "shape-50",
       "type": "initialization",
       "x": -126.0000467300415,
       "y": -204.00001525878906,
@@ -80,7 +80,7 @@
       ]
     },
     {
-      "id": "shape-79",
+      "id": "shape-51",
       "type": "input-output",
       "x": -117.00001239776611,
       "y": -80,
@@ -97,7 +97,7 @@
       "inputOutputType": "input"
     },
     {
-      "id": "shape-80",
+      "id": "shape-52",
       "type": "decision",
       "x": -129.0000343322754,
       "y": 40,
@@ -107,7 +107,7 @@
       "programCode": "Number > 0"
     },
     {
-      "id": "shape-81",
+      "id": "shape-53",
       "type": "process",
       "x": 160,
       "y": 54.000043869018555,
@@ -117,7 +117,7 @@
       "programCode": "Positive = Positive  + 1"
     },
     {
-      "id": "shape-82",
+      "id": "shape-54",
       "type": "decision",
       "x": -129.0000343322754,
       "y": 200,
@@ -127,7 +127,7 @@
       "programCode": "Number < 0"
     },
     {
-      "id": "shape-83",
+      "id": "shape-55",
       "type": "process",
       "x": 161.88958644866943,
       "y": 214.00004386901853,
@@ -137,7 +137,7 @@
       "programCode": "Negative = Negative + 1"
     },
     {
-      "id": "shape-84",
+      "id": "shape-56",
       "type": "process",
       "x": 160,
       "y": 360,
@@ -147,7 +147,7 @@
       "programCode": "Zeroes = Zeroes + 1"
     },
     {
-      "id": "shape-85",
+      "id": "shape-57",
       "type": "input-output",
       "x": 352.88955211639404,
       "y": -324.00001525878906,
@@ -158,7 +158,7 @@
       "inputOutputType": "output"
     },
     {
-      "id": "shape-86",
+      "id": "shape-58",
       "type": "process",
       "x": 440,
       "y": 214.00004386901855,
@@ -168,7 +168,7 @@
       "programCode": "Count = Count + 1"
     },
     {
-      "id": "shape-87",
+      "id": "shape-59",
       "type": "decision",
       "x": 350,
       "y": -93.77917289733887,
@@ -178,7 +178,7 @@
       "programCode": "Count == 10"
     },
     {
-      "id": "shape-88",
+      "id": "shape-60",
       "type": "terminator",
       "x": 120,
       "y": -320,
@@ -191,102 +191,108 @@
   ],
   "connections": [
     {
-      "from": "shape-77",
-      "to": "shape-78",
+      "from": "shape-49",
+      "to": "shape-50",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-78",
-      "to": "shape-79",
+      "from": "shape-50",
+      "to": "shape-51",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-80",
-      "to": "shape-82",
-      "direction": "s",
-      "role": "altNext",
-      "label": "False"
-    },
-    {
-      "from": "shape-80",
-      "to": "shape-81",
-      "direction": "e",
-      "role": "next",
-      "label": "True"
-    },
-    {
-      "from": "shape-82",
-      "to": "shape-83",
-      "direction": "e",
-      "role": "next",
-      "label": "True"
-    },
-    {
-      "from": "shape-82",
-      "to": "shape-84",
+      "from": "shape-52",
+      "to": "shape-54",
       "direction": "s",
       "role": "altNext",
       "label": "False"
     },
     {
-      "from": "shape-79",
-      "to": "shape-80",
+      "from": "shape-52",
+      "to": "shape-53",
+      "direction": "e",
+      "role": "next",
+      "label": "True"
+    },
+    {
+      "from": "shape-54",
+      "to": "shape-55",
+      "direction": "e",
+      "role": "next",
+      "label": "True"
+    },
+    {
+      "from": "shape-54",
+      "to": "shape-56",
+      "direction": "s",
+      "role": "altNext",
+      "label": "False"
+    },
+    {
+      "from": "shape-51",
+      "to": "shape-52",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-83",
-      "to": "shape-86",
+      "from": "shape-55",
+      "to": "shape-58",
       "direction": "e",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-84",
-      "to": "shape-86",
+      "from": "shape-56",
+      "to": "shape-58",
       "direction": "e",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-81",
-      "to": "shape-86",
+      "from": "shape-53",
+      "to": "shape-58",
       "direction": "e",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-86",
-      "to": "shape-87",
+      "from": "shape-58",
+      "to": "shape-59",
       "direction": "e",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-87",
-      "to": "shape-85",
+      "from": "shape-59",
+      "to": "shape-57",
       "direction": "n",
       "role": "next",
       "label": "True"
     },
     {
-      "from": "shape-85",
-      "to": "shape-88",
+      "from": "shape-57",
+      "to": "shape-60",
       "direction": "w",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-87",
-      "to": "shape-79",
+      "from": "shape-59",
+      "to": "shape-51",
       "direction": "w",
       "role": "altNext",
       "label": "False"
     }
-  ]
+  ],
+  "preview": {
+    "mimeType": "image/svg+xml",
+    "data": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22750%22%20height%3D%22800%22%20viewBox%3D%220%200%20863.0000343322754%20920.0000152587891%22%20role%3D%22img%22%3E%3Crect%20width%3D%22863.0000343322754%22%20height%3D%22920.0000152587891%22%20fill%3D%22%23ffffff%22%2F%3E%3Cdefs%3E%3Cmarker%20id%3D%22preview-arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%2210%22%20refY%3D%225%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20markerUnits%3D%22userSpaceOnUse%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M%200%200.5%20L%2010%205%20L%200%209.5%20L%202.5%205%20z%22%20fill%3D%22%23475569%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Ctext%20x%3D%22431.5000171661377%22%20y%3D%2230%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3ECount%20Positive%20and%20Negative%20Numbers%3C%2Ftext%3E%3Ctext%20x%3D%22431.5000171661377%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20fill%3D%22%2364748b%22%3EInput%20ten%20numbers.%20Count%20and%20display%20how%20many%20are%20positive%2C%20negative%2C%20and%20zero.%3C%2Ftext%3E%3Cg%20transform%3D%22translate(165.0000343322754%20444.00001525878906)%22%3E%3Cpath%20d%3D%22M%20-27.000012397766113%20-240%20L%20-27.000012397766113%20-204.00001525878906%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%20-27.000012397766113%20-115.99998474121094%20L%20-27.000012397766113%20-80%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%20-27%20148%20L%20-27%20200%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Ctext%20x%3D%22-27%22%20y%3D%22174%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2212%22%20fill%3D%22%23334155%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%225%22%20paint-order%3D%22stroke%22%3EFalse%3C%2Ftext%3E%3Cpath%20d%3D%22M%2075%2094%20L%20160%2094.00004386901855%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Ctext%20x%3D%22117.5%22%20y%3D%2294.00002193450928%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2212%22%20fill%3D%22%23334155%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%225%22%20paint-order%3D%22stroke%22%3ETrue%3C%2Ftext%3E%3Cpath%20d%3D%22M%2075%20254%20L%20161.88958644866943%20254.00004386901853%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Ctext%20x%3D%22118.44479322433472%22%20y%3D%22254.00002193450928%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2212%22%20fill%3D%22%23334155%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%225%22%20paint-order%3D%22stroke%22%3ETrue%3C%2Ftext%3E%3Cpath%20d%3D%22M%20-27%20308%20L%20-27%20392%20Q%20-27%20400%20-19%20400%20L%20160%20400%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Ctext%20x%3D%2266.5%22%20y%3D%22400%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2212%22%20fill%3D%22%23334155%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%225%22%20paint-order%3D%22stroke%22%3EFalse%3C%2Ftext%3E%3Cpath%20d%3D%22M%20-27.000012397766113%200%20L%20-27%2040%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%20361.88958644866943%20254.00004386901853%20L%20440%20254.00004386901855%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%20360%20400%20L%20532%20400%20Q%20540%20400%20540%20392%20L%20540%20294.00004386901855%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%20360%2094.00004386901855%20L%20532.0000000000002%2094.00000194973416%20Q%20540%2094%20540%20102%20L%20540%20214.00004386901855%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%20640%20254.00004386901855%20L%20654.0000000000159%20254.00001595237038%20Q%20662%20254%20662%20246%20L%20662%20-32%20Q%20662%20-40%20654%20-40%20L%20554%20-40%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%20452%20-94%20L%20452%20-157%20Q%20452%20-165%20460%20-165%20L%20488.44%20-165%20Q%20496.44%20-165%20496.4405381475169%20-172.99999998189983%20L%20496.444776058197%20-235.99998474121094%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Ctext%20x%3D%22452%22%20y%3D%22-129.5%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2212%22%20fill%3D%22%23334155%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%225%22%20paint-order%3D%22stroke%22%3ETrue%3C%2Ftext%3E%3Cpath%20d%3D%22M%20370.1161789894104%20-280%20L%20300%20-280%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%20350%20-40%20L%2052.199987602233875%20-40%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Ctext%20x%3D%22201.09999380111694%22%20y%3D%22-40%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2212%22%20fill%3D%22%23334155%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%225%22%20paint-order%3D%22stroke%22%3EFalse%3C%2Ftext%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-0%22%3E%3Crect%20x%3D%22-117.00001239776611%22%20y%3D%22-320%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20x%3D%22-117.00001239776611%22%20y%3D%22-320%22%20width%3D%22180%22%20height%3D%2280%22%20rx%3D%2240%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-0)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22-27.000012397766113%22%20y%3D%22-280%22%20dominant-baseline%3D%22middle%22%3EStart%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-1%22%3E%3Crect%20x%3D%22-126.0000467300415%22%20y%3D%22-204.00001525878906%22%20width%3D%22198.00006866455078%22%20height%3D%2288.00003051757812%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22-90.36003437042237%2C-204.00001525878906%2036.360009574890135%2C-204.00001525878906%2072.00002193450928%2C-160%2036.360009574890135%2C-115.99998474121094%20-90.36003437042237%2C-115.99998474121094%20-126.0000467300415%2C-160%22%20fill%3D%22%2314b8a6%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-1)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22-27.000012397766113%22%20y%3D%22-187%22%20dominant-baseline%3D%22middle%22%3ECount%20%3D%200%3C%2Ftext%3E%3Ctext%20x%3D%22-27.000012397766113%22%20y%3D%22-169%22%20dominant-baseline%3D%22middle%22%3EPositive%20%3D%200%3C%2Ftext%3E%3Ctext%20x%3D%22-27.000012397766113%22%20y%3D%22-151%22%20dominant-baseline%3D%22middle%22%3ENegative%20%3D%200%3C%2Ftext%3E%3Ctext%20x%3D%22-27.000012397766113%22%20y%3D%22-133%22%20dominant-baseline%3D%22middle%22%3EZeroes%20%3D%200%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-2%22%3E%3Crect%20x%3D%22-117.00001239776611%22%20y%3D%22-80%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22-95.40001239776612%2C-80%2062.99998760223389%2C-80%2041.39998760223389%2C0%20-117.00001239776611%2C0%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-2)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22-27.000012397766113%22%20y%3D%22-49%22%20dominant-baseline%3D%22middle%22%3EInput%3C%2Ftext%3E%3Ctext%20x%3D%22-27.000012397766113%22%20y%3D%22-31%22%20dominant-baseline%3D%22middle%22%3ENumber%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-3%22%3E%3Crect%20x%3D%22-129.0000343322754%22%20y%3D%2240%22%20width%3D%22204.00004386901855%22%20height%3D%22108.00008773803711%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22-27.000012397766113%2C40%2075.00000953674316%2C94.00004386901855%20-27.000012397766113%2C148.0000877380371%20-129.0000343322754%2C94.00004386901855%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-3)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22-27.000012397766113%22%20y%3D%2294.00004386901855%22%20dominant-baseline%3D%22middle%22%3Eis%20Number%20%26gt%3B%200%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-4%22%3E%3Crect%20x%3D%22160%22%20y%3D%2254.000043869018555%22%20width%3D%22200%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20x%3D%22160%22%20y%3D%2254.000043869018555%22%20width%3D%22200%22%20height%3D%2280%22%20rx%3D%223%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-4)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22260%22%20y%3D%2285.00004386901855%22%20dominant-baseline%3D%22middle%22%3EPositive%20%3D%20Positive%20%2B%3C%2Ftext%3E%3Ctext%20x%3D%22260%22%20y%3D%22103.00004386901855%22%20dominant-baseline%3D%22middle%22%3E1%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-5%22%3E%3Crect%20x%3D%22-129.0000343322754%22%20y%3D%22200%22%20width%3D%22204.00004386901855%22%20height%3D%22108.00008773803711%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22-27.000012397766113%2C200%2075.00000953674316%2C254.00004386901855%20-27.000012397766113%2C308.0000877380371%20-129.0000343322754%2C254.00004386901855%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-5)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22-27.000012397766113%22%20y%3D%22254.00004386901855%22%20dominant-baseline%3D%22middle%22%3Eis%20Number%20%26lt%3B%200%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-6%22%3E%3Crect%20x%3D%22161.88958644866943%22%20y%3D%22214.00004386901853%22%20width%3D%22200%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20x%3D%22161.88958644866943%22%20y%3D%22214.00004386901853%22%20width%3D%22200%22%20height%3D%2280%22%20rx%3D%223%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-6)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22261.88958644866943%22%20y%3D%22245.00004386901853%22%20dominant-baseline%3D%22middle%22%3ENegative%20%3D%20Negative%20%2B%3C%2Ftext%3E%3Ctext%20x%3D%22261.88958644866943%22%20y%3D%22263.00004386901855%22%20dominant-baseline%3D%22middle%22%3E1%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-7%22%3E%3Crect%20x%3D%22160%22%20y%3D%22360%22%20width%3D%22200%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20x%3D%22160%22%20y%3D%22360%22%20width%3D%22200%22%20height%3D%2280%22%20rx%3D%223%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-7)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22260%22%20y%3D%22400%22%20dominant-baseline%3D%22middle%22%3EZeroes%20%3D%20Zeroes%20%2B%201%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-8%22%3E%3Crect%20x%3D%22352.88955211639404%22%20y%3D%22-324.00001525878906%22%20width%3D%22287.11044788360596%22%20height%3D%2288.00003051757812%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22387.34280586242676%2C-324.00001525878906%20640%2C-324.00001525878906%20605.5467462539673%2C-235.99998474121094%20352.88955211639404%2C-235.99998474121094%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-8)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22496.444776058197%22%20y%3D%22-307%22%20dominant-baseline%3D%22middle%22%3EPrint%3C%2Ftext%3E%3Ctext%20x%3D%22496.444776058197%22%20y%3D%22-289%22%20dominant-baseline%3D%22middle%22%3E%26quot%3BPositives%3A%20%26quot%3B%20%2B%20Positive%20%2B%3C%2Ftext%3E%3Ctext%20x%3D%22496.444776058197%22%20y%3D%22-271%22%20dominant-baseline%3D%22middle%22%3E%26quot%3B%2C%20Negatives%3A%20%26quot%3B%20%2B%20Negative%20%2B%3C%2Ftext%3E%3Ctext%20x%3D%22496.444776058197%22%20y%3D%22-253%22%20dominant-baseline%3D%22middle%22%3E%26quot%3B%2C%20Zeroes%3A%20%26quot%3B%20%2B%20Zeroes%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-9%22%3E%3Crect%20x%3D%22440%22%20y%3D%22214.00004386901855%22%20width%3D%22200%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20x%3D%22440%22%20y%3D%22214.00004386901855%22%20width%3D%22200%22%20height%3D%2280%22%20rx%3D%223%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-9)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22540%22%20y%3D%22254.00004386901855%22%20dominant-baseline%3D%22middle%22%3ECount%20%3D%20Count%20%2B%201%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-10%22%3E%3Crect%20x%3D%22350%22%20y%3D%22-93.77917289733887%22%20width%3D%22203.77917289733887%22%20height%3D%22107.55834579467773%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22451.88958644866943%2C-93.77917289733887%20553.7791728973389%2C-40%20451.88958644866943%2C13.779172897338867%20350%2C-40%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-10)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22451.88958644866943%22%20y%3D%22-40%22%20dominant-baseline%3D%22middle%22%3Eis%20Count%20%3D%3D%2010%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-11%22%3E%3Crect%20x%3D%22120%22%20y%3D%22-320%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20x%3D%22120%22%20y%3D%22-320%22%20width%3D%22180%22%20height%3D%2280%22%20rx%3D%2240%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-11)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22210%22%20y%3D%22-280%22%20dominant-baseline%3D%22middle%22%3EEnd%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
+    "width": 750,
+    "height": 800
+  }
 }

@@ -30,7 +30,7 @@
   },
   "shapes": [
     {
-      "id": "shape-89",
+      "id": "shape-61",
       "type": "terminator",
       "x": -120,
       "y": -400,
@@ -41,7 +41,7 @@
       "terminatorType": "start"
     },
     {
-      "id": "shape-90",
+      "id": "shape-62",
       "type": "input-output",
       "x": -120,
       "y": -160,
@@ -58,7 +58,7 @@
       "inputOutputType": "input"
     },
     {
-      "id": "shape-91",
+      "id": "shape-63",
       "type": "decision",
       "x": -210,
       "y": -40,
@@ -68,7 +68,7 @@
       "programCode": "Password == \"PUP2026\""
     },
     {
-      "id": "shape-92",
+      "id": "shape-64",
       "type": "input-output",
       "x": -120,
       "y": 160,
@@ -79,7 +79,7 @@
       "inputOutputType": "output"
     },
     {
-      "id": "shape-93",
+      "id": "shape-65",
       "type": "input-output",
       "x": -120,
       "y": -280,
@@ -90,7 +90,7 @@
       "inputOutputType": "output"
     },
     {
-      "id": "shape-94",
+      "id": "shape-66",
       "type": "terminator",
       "x": -120,
       "y": 280,
@@ -103,43 +103,43 @@
   ],
   "connections": [
     {
-      "from": "shape-90",
-      "to": "shape-91",
+      "from": "shape-62",
+      "to": "shape-63",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-91",
-      "to": "shape-92",
+      "from": "shape-63",
+      "to": "shape-64",
       "direction": "s",
       "role": "next",
       "label": "Yes"
     },
     {
-      "from": "shape-89",
-      "to": "shape-93",
+      "from": "shape-61",
+      "to": "shape-65",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-92",
-      "to": "shape-94",
+      "from": "shape-64",
+      "to": "shape-66",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-93",
-      "to": "shape-90",
+      "from": "shape-65",
+      "to": "shape-62",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-91",
-      "to": "shape-93",
+      "from": "shape-63",
+      "to": "shape-65",
       "direction": "e",
       "role": "altNext",
       "label": "No",
@@ -151,5 +151,11 @@
         }
       ]
     }
-  ]
+  ],
+  "preview": {
+    "mimeType": "image/svg+xml",
+    "data": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22419%22%20height%3D%22800%22%20viewBox%3D%220%200%20480.2%20916%22%20role%3D%22img%22%3E%3Crect%20width%3D%22480.2%22%20height%3D%22916%22%20fill%3D%22%23ffffff%22%2F%3E%3Cdefs%3E%3Cmarker%20id%3D%22preview-arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%2210%22%20refY%3D%225%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20markerUnits%3D%22userSpaceOnUse%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M%200%200.5%20L%2010%205%20L%200%209.5%20L%202.5%205%20z%22%20fill%3D%22%23475569%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Ctext%20x%3D%22240.1%22%20y%3D%2230%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3EPassword%20Verification%3C%2Ftext%3E%3Ctext%20x%3D%22240.1%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20fill%3D%22%2364748b%22%3EAsk%20the%20user%20to%20enter%20a%20password%20repeatedly%20until%20the%20correct%20password%2C%20PUP2026%2C%20is%20entered.%20Display%20%E2%80%9CAccess%20Granted%E2%80%9D%20afterward.%3C%2Ftext%3E%3Cg%20transform%3D%22translate(246%20520)%22%3E%3Cpath%20d%3D%22M%20-30%20-80%20L%20-30%20-40%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%20-30%2080%20L%20-30%20160%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Ctext%20x%3D%22-30%22%20y%3D%22120%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2212%22%20fill%3D%22%23334155%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%225%22%20paint-order%3D%22stroke%22%3EYes%3C%2Ftext%3E%3Cpath%20d%3D%22M%20-30%20-320%20L%20-30%20-280%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%20-30%20240%20L%20-30%20280%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%20-30%20-200%20L%20-30%20-160%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%20150%2020%20L%20190.2%2020%20Q%20198.2%2020%20198.2%2012%20L%20198.2%20-232%20Q%20198.2%20-240%20190.2%20-240%20L%2049.19999999999999%20-240%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Ctext%20x%3D%22198.2%22%20y%3D%22-110%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2212%22%20fill%3D%22%23334155%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%225%22%20paint-order%3D%22stroke%22%3ENo%3C%2Ftext%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-0%22%3E%3Crect%20x%3D%22-120%22%20y%3D%22-400%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20x%3D%22-120%22%20y%3D%22-400%22%20width%3D%22180%22%20height%3D%2280%22%20rx%3D%2240%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-0)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22-30%22%20y%3D%22-360%22%20dominant-baseline%3D%22middle%22%3EStart%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-1%22%3E%3Crect%20x%3D%22-120%22%20y%3D%22-160%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22-98.4%2C-160%2060%2C-160%2038.400000000000006%2C-80%20-120%2C-80%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-1)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22-30%22%20y%3D%22-129%22%20dominant-baseline%3D%22middle%22%3EInput%3C%2Ftext%3E%3Ctext%20x%3D%22-30%22%20y%3D%22-111%22%20dominant-baseline%3D%22middle%22%3EPassword%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-2%22%3E%3Crect%20x%3D%22-210%22%20y%3D%22-40%22%20width%3D%22360%22%20height%3D%22120%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22-30%2C-40%20150%2C20%20-30%2C80%20-210%2C20%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-2)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22-30%22%20y%3D%2211%22%20dominant-baseline%3D%22middle%22%3EIs%3C%2Ftext%3E%3Ctext%20x%3D%22-30%22%20y%3D%2229%22%20dominant-baseline%3D%22middle%22%3EPassword%20%3D%3D%20%26quot%3BPUP2026%26quot%3B%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-3%22%3E%3Crect%20x%3D%22-120%22%20y%3D%22160%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22-98.4%2C160%2060%2C160%2038.400000000000006%2C240%20-120%2C240%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-3)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22-30%22%20y%3D%22191%22%20dominant-baseline%3D%22middle%22%3EPrint%3C%2Ftext%3E%3Ctext%20x%3D%22-30%22%20y%3D%22209%22%20dominant-baseline%3D%22middle%22%3E%26quot%3BAccess%20Granted%26quot%3B%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-4%22%3E%3Crect%20x%3D%22-120%22%20y%3D%22-280%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22-98.4%2C-280%2060%2C-280%2038.400000000000006%2C-200%20-120%2C-200%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-4)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22-30%22%20y%3D%22-249%22%20dominant-baseline%3D%22middle%22%3EPrint%3C%2Ftext%3E%3Ctext%20x%3D%22-30%22%20y%3D%22-231%22%20dominant-baseline%3D%22middle%22%3E%26quot%3BEnter%20password%3A%20%26quot%3B%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-5%22%3E%3Crect%20x%3D%22-120%22%20y%3D%22280%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20x%3D%22-120%22%20y%3D%22280%22%20width%3D%22180%22%20height%3D%2280%22%20rx%3D%2240%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-5)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22-30%22%20y%3D%22320%22%20dominant-baseline%3D%22middle%22%3EEnd%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
+    "width": 419,
+    "height": 800
+  }
 }

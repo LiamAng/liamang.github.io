@@ -243,6 +243,14 @@ function clearMenuSelection() {
     });
 }
 
+async function getPreview(url) {
+    const querry = new URLSearchParams(url.split("?")[1]);
+    const response = await fetch(querry.get("url"));
+    if (response.ok) {
+        return await response.json()["preview"]["data"];
+    }    
+}
+
 function populateMenu(contents, title) {
     menuSearch.value = "";
     document.getElementById("menu-title").innerHTML = title;
@@ -267,10 +275,13 @@ function populateMenu(contents, title) {
                 };
                 showPage(stuff[4], back);
             };
-
+            let src = stuff[0];
+            if (src.endsWith(".json")) {
+                src = getPreview(src);
+            }
             content.innerHTML = `
                 <div class="icon">
-                    <img src="${stuff[0]}">
+                    <img src="${src}">
                     <button class="open"></button>
                 </div>
                 <div class="info">
@@ -308,14 +319,12 @@ async function loadFlowcharts(selected = "Sequence") {
     if (response.ok) {
         const flowchartIndex = await response.json();
         flowchartIndex.forEach((title, index) => {
+            let url = `${baseUrl}/${index + 1}.png`
             if (selected == "Iteration") {
                 const jsonUrl = `https://liamang.github.io/${baseUrl}/${index + 1}.json`;
-                const url = `https://liamang.github.io/flowcraft/?hideSettings&url=${jsonUrl}`
-                flowcharts.push([url, `Flowchart ${index + 1}`, title, selected, url]);
-            } else {
-                const url = `${baseUrl}/${index + 1}.png`;
-                flowcharts.push([url, `Flowchart ${index + 1}`, title, selected, url]);
+                url = `https://liamang.github.io/flowcraft/?hideSettings&url=${jsonUrl}`
             }
+            flowcharts.push([url, `Flowchart ${index + 1}`, title, selected, url]);
         });
     }
 

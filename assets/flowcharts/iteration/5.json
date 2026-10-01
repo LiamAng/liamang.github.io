@@ -20,12 +20,13 @@
       "Number": 6
     },
     "simulationRatio": 0.4713541666666667,
+    "simulationStepContentMaxWidth": 200,
     "valueAccuracy": 2,
     "simulationStepDelay": 100
   },
   "shapes": [
     {
-      "id": "shape-58",
+      "id": "shape-27",
       "type": "terminator",
       "x": -80,
       "y": -400,
@@ -36,7 +37,7 @@
       "terminatorType": "start"
     },
     {
-      "id": "shape-59",
+      "id": "shape-28",
       "type": "input-output",
       "x": -80,
       "y": -280,
@@ -53,7 +54,7 @@
       "inputOutputType": "input"
     },
     {
-      "id": "shape-60",
+      "id": "shape-29",
       "type": "initialization",
       "x": -80,
       "y": -160,
@@ -75,7 +76,7 @@
       ]
     },
     {
-      "id": "shape-61",
+      "id": "shape-30",
       "type": "process",
       "x": -82.5,
       "y": -40,
@@ -85,7 +86,7 @@
       "programCode": "Count = Count + 1\nResult = Number * Count"
     },
     {
-      "id": "shape-62",
+      "id": "shape-31",
       "type": "input-output",
       "x": -80,
       "y": 80,
@@ -96,7 +97,7 @@
       "inputOutputType": "output"
     },
     {
-      "id": "shape-63",
+      "id": "shape-32",
       "type": "decision",
       "x": -91.88958644866943,
       "y": 200,
@@ -106,7 +107,7 @@
       "programCode": "Count == 10"
     },
     {
-      "id": "shape-64",
+      "id": "shape-33",
       "type": "terminator",
       "x": -80,
       "y": 360,
@@ -119,53 +120,59 @@
   ],
   "connections": [
     {
-      "from": "shape-58",
-      "to": "shape-59",
+      "from": "shape-27",
+      "to": "shape-28",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-59",
-      "to": "shape-60",
+      "from": "shape-28",
+      "to": "shape-29",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-60",
-      "to": "shape-61",
+      "from": "shape-29",
+      "to": "shape-30",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-61",
-      "to": "shape-62",
+      "from": "shape-30",
+      "to": "shape-31",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-62",
-      "to": "shape-63",
+      "from": "shape-31",
+      "to": "shape-32",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-63",
-      "to": "shape-64",
+      "from": "shape-32",
+      "to": "shape-33",
       "direction": "s",
       "role": "next",
       "label": "True"
     },
     {
-      "from": "shape-63",
-      "to": "shape-61",
+      "from": "shape-32",
+      "to": "shape-30",
       "direction": "e",
       "role": "altNext",
       "label": "False"
     }
-  ]
+  ],
+  "preview": {
+    "mimeType": "image/svg+xml",
+    "data": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22239%22%20height%3D%22800%22%20viewBox%3D%220%200%20297.88958644866943%20996%22%20role%3D%22img%22%3E%3Crect%20width%3D%22297.88958644866943%22%20height%3D%22996%22%20fill%3D%22%23ffffff%22%2F%3E%3Cdefs%3E%3Cmarker%20id%3D%22preview-arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%2210%22%20refY%3D%225%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20markerUnits%3D%22userSpaceOnUse%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M%200%200.5%20L%2010%205%20L%200%209.5%20L%202.5%205%20z%22%20fill%3D%22%23475569%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Ctext%20x%3D%22148.94479322433472%22%20y%3D%2230%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3EMultiplication%20Table%3C%2Ftext%3E%3Ctext%20x%3D%22148.94479322433472%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20fill%3D%22%2364748b%22%3EInput%20a%20number%20and%20display%20its%20multiplication%20table%20from%201%20to%2010%3C%2Ftext%3E%3Cg%20transform%3D%22translate(127.88958644866943%20520)%22%3E%3Cpath%20d%3D%22M%2010%20-320%20L%2010%20-280%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%2010%20-200%20L%2010%20-160%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%2010%20-80%20L%2010%20-40%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%2010%2040%20L%2010%2080%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%2010%20160%20L%2010%20200%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%2010%20308%20L%2010%20360%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Ctext%20x%3D%2210%22%20y%3D%22334%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2212%22%20fill%3D%22%23334155%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%225%22%20paint-order%3D%22stroke%22%3ETrue%3C%2Ftext%3E%3Cpath%20d%3D%22M%20112%20254%20L%20126%20254%20Q%20134%20254%20134%20246%20L%20134%208%20Q%20134%200%20126%200%20L%20102.5%200%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Ctext%20x%3D%22134%22%20y%3D%22127%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2212%22%20fill%3D%22%23334155%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%225%22%20paint-order%3D%22stroke%22%3EFalse%3C%2Ftext%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-0%22%3E%3Crect%20x%3D%22-80%22%20y%3D%22-400%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20x%3D%22-80%22%20y%3D%22-400%22%20width%3D%22180%22%20height%3D%2280%22%20rx%3D%2240%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-0)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2210%22%20y%3D%22-360%22%20dominant-baseline%3D%22middle%22%3EStart%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-1%22%3E%3Crect%20x%3D%22-80%22%20y%3D%22-280%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22-58.400000000000006%2C-280%20100%2C-280%2078.4%2C-200%20-80%2C-200%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-1)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2210%22%20y%3D%22-249%22%20dominant-baseline%3D%22middle%22%3EInput%3C%2Ftext%3E%3Ctext%20x%3D%2210%22%20y%3D%22-231%22%20dominant-baseline%3D%22middle%22%3ENumber%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-2%22%3E%3Crect%20x%3D%22-80%22%20y%3D%22-160%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22-47.6%2C-160%2067.6%2C-160%20100%2C-120%2067.6%2C-80%20-47.6%2C-80%20-80%2C-120%22%20fill%3D%22%2314b8a6%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-2)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2210%22%20y%3D%22-129%22%20dominant-baseline%3D%22middle%22%3ECount%20%3D%200%3C%2Ftext%3E%3Ctext%20x%3D%2210%22%20y%3D%22-111%22%20dominant-baseline%3D%22middle%22%3EResult%20%3D%200%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-3%22%3E%3Crect%20x%3D%22-82.5%22%20y%3D%22-40%22%20width%3D%22185%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20x%3D%22-82.5%22%20y%3D%22-40%22%20width%3D%22185%22%20height%3D%2280%22%20rx%3D%223%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-3)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2210%22%20y%3D%22-18%22%20dominant-baseline%3D%22middle%22%3ECount%20%3D%20Count%20%2B%201%3C%2Ftext%3E%3Ctext%20x%3D%2210%22%20y%3D%220%22%20dominant-baseline%3D%22middle%22%3EResult%20%3D%20Number%20*%3C%2Ftext%3E%3Ctext%20x%3D%2210%22%20y%3D%2218%22%20dominant-baseline%3D%22middle%22%3ECount%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-4%22%3E%3Crect%20x%3D%22-80%22%20y%3D%2280%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22-58.400000000000006%2C80%20100%2C80%2078.4%2C160%20-80%2C160%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-4)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2210%22%20y%3D%22111%22%20dominant-baseline%3D%22middle%22%3EPrint%3C%2Ftext%3E%3Ctext%20x%3D%2210%22%20y%3D%22129%22%20dominant-baseline%3D%22middle%22%3EResult%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-5%22%3E%3Crect%20x%3D%22-91.88958644866943%22%20y%3D%22200%22%20width%3D%22203.77917289733887%22%20height%3D%22107.55834579467773%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%2210%2C200%20111.88958644866943%2C253.77917289733887%2010%2C307.55834579467773%20-91.88958644866943%2C253.77917289733887%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-5)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2210%22%20y%3D%22253.77917289733887%22%20dominant-baseline%3D%22middle%22%3Eis%20Count%20%3D%3D%2010%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-6%22%3E%3Crect%20x%3D%22-80%22%20y%3D%22360%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20x%3D%22-80%22%20y%3D%22360%22%20width%3D%22180%22%20height%3D%2280%22%20rx%3D%2240%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-6)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2210%22%20y%3D%22400%22%20dominant-baseline%3D%22middle%22%3EEnd%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
+    "width": 239,
+    "height": 800
+  }
 }
