@@ -243,72 +243,65 @@ function clearMenuSelection() {
     });
 }
 
-async function getPreview(url) {
-    const querry = new URLSearchParams(url.split("?")[1]);
-    const response = await fetch(querry.get("url"));
-    if (response.ok) {
-        return await response.json()["preview"]["data"];
-    }    
+const menuScreen = document.getElementById("menu-screen");
+const mainMenu = document.getElementById("main-menu");
+const menuTitle = document.getElementById("menu-title");
+const itemTemplate = document.createElement("template");
+itemTemplate.innerHTML = `<div class="content"><div class="icon"><img loading="lazy" alt=""><button class="open"></button></div><div class="info"><p class="title"></p><p class="description"></p><p class="description"></p></div></div>`;
+let currentItems = [];
+
+async function loadPreview(src, img) {
+    try {
+        const target = new URL(src, location.href).searchParams.get("url");
+        const response = target && await fetch(target);
+        if (response?.ok && img.isConnected) img.src = (await response.json()).preview.data;
+    } catch (err) {
+        console.error("Preview failed:", err);
+    }
 }
 
+function createItem([src, title, desc1, desc2], index) {
+    const content = itemTemplate.content.firstElementChild.cloneNode(true);
+    const img = content.querySelector("img");
+    content.dataset.index = index;
+    [title, desc1, desc2].forEach((text, i) => content.querySelectorAll(".info p")[i].textContent = text);
+    src.endsWith(".json") ? loadPreview(src, img) : img.src = src;
+    return content;
+}
+
+function openItem(content) {
+    menuScreen.style.display = "none";
+    clearMenuSelection();
+    showPage(currentItems[content.dataset.index][4], () => menuScreen.style.display = "flex");
+}
+
+menuList.addEventListener("click", (e) => {
+    const content = e.target.closest(".content");
+    if (!content) return;
+    if (e.target.closest(".open")) return openItem(content);
+    clearMenuSelection();
+    content.classList.add("selected");
+});
+
+menuList.addEventListener("dblclick", (e) => {
+    const content = e.target.closest(".content");
+    if (content) { openItem(content); playClick(); }
+});
+
 function populateMenu(contents, title) {
+    currentItems = contents;
     menuSearch.value = "";
-    document.getElementById("menu-title").innerHTML = title;
-    menuList.innerHTML = "";
-
-    if (contents.length < 1) {
+    menuTitle.textContent = title;
+    const items = contents.map(createItem);
+    if (!items.length) {
         const message = document.createElement("p");
-        message.style = "color: white";
-        message.innerHTML = "Sorry wala pa. :(";
-        menuList.appendChild(message);
-    } else {
-        contents.forEach((stuff) => {
-            const content = document.createElement("div");
-            content.classList.add("content");
-
-            const open = () => {
-                const menuScreen = document.getElementById("menu-screen");
-                menuScreen.style.display = "none";
-                clearMenuSelection();
-                var back = () => {
-                    menuScreen.style.display = "flex";
-                };
-                showPage(stuff[4], back);
-            };
-            let src = stuff[0];
-            if (src.endsWith(".json")) {
-                src = getPreview(src);
-            }
-            content.innerHTML = `
-                <div class="icon">
-                    <img src="${src}">
-                    <button class="open"></button>
-                </div>
-                <div class="info">
-                    <p class="title">${stuff[1]}</p>
-                    <p class="description">${stuff[2]}</p>
-                    <p class="description">${stuff[3]}</p>
-                </div>
-            `;
-
-            content.addEventListener("click", () => {
-                clearMenuSelection();
-                content.classList.add("selected");
-            });
-            content.addEventListener("dblclick", () => { open(); playClick(); });
-
-            const openButton = content.querySelector(".open");
-            openButton.addEventListener("click", (e) => {
-                e.stopImmediatePropagation();
-                open();
-            });
-
-            menuList.appendChild(content);
-        });
+        message.style.color = "white";
+        message.textContent = "Sorry wala pa. :(";
+        items.push(message);
     }
-
-    document.getElementById("menu-screen").style.display = "flex";
-    document.getElementById("main-menu").style.display = "none";
+    menuList.replaceChildren(...items);
+    menuScreen.style.display = "flex";
+    mainMenu.style.display = "none";
 }
 
 async function loadFlowcharts(selected = "Sequence") {
