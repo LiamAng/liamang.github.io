@@ -270,9 +270,12 @@ function createItem([src, title, desc1, desc2], index) {
 }
 
 function openItem(content) {
+    const url = currentItems[content.dataset.index][4];
+    if (url.endsWith(".png"))
+        return window.open(url);
     menuScreen.style.display = "none";
     clearMenuSelection();
-    showPage(currentItems[content.dataset.index][4], () => menuScreen.style.display = "flex");
+    showPage(url, () => menuScreen.style.display = "flex");
 }
 
 menuList.addEventListener("click", (e) => {
