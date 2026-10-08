@@ -271,11 +271,13 @@ function createItem([src, title, desc1, desc2], index) {
 
 function openItem(content) {
     const url = currentItems[content.dataset.index][4];
-    if (url.endsWith(".png"))
-        return window.open(url);
-    menuScreen.style.display = "none";
     clearMenuSelection();
-    showPage(url, () => menuScreen.style.display = "flex");
+    if (url.endsWith(".json")) {
+        menuScreen.style.display = "none";
+        showPage(url, () => menuScreen.style.display = "flex");
+        return;
+    }
+    window.open(url);
 }
 
 menuList.addEventListener("click", (e) => {
