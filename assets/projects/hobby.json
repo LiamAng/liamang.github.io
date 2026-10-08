@@ -1,6 +1,13 @@
 [
     [
         "https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/refs/heads/26.1/assets/minecraft/textures/misc/unknown_pack.png",
+        "FlowCraft",
+        "Flow chart maker with auto simulation",
+        "HTML, Typescript",
+        "https://github.com/LiamAng/flowcraft"
+    ],
+    [
+        "https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/refs/heads/26.1/assets/minecraft/textures/misc/unknown_pack.png",
         "BuildLimitChanger",
         "Bypass minecraft build limit",
         "C",
