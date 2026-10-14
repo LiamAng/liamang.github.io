@@ -1,18 +1,24 @@
 {
   "version": 1,
   "settings": {
-    "title": "Sum of Numbers",
+    "title": "4. Sum of Numbers",
     "description": "Input a positive integer N. Compute and display the sum of all integers from 1 to N.",
     "decisionBranchLabels": "true-false",
-    "readOnly": true,
+    "readOnly": false,
     "snap": true,
+    "snapResizeToGrid": false,
     "gridSize": 40,
     "guides": true,
     "showGrid": true,
     "showSteps": false,
-    "showStepNumbers": true,
+    "hideSteps": true,
+    "showStepNumbers": false,
     "showShapeContentInSteps": true,
+    "processContentAsCode": true,
+    "setShapeContentBasedOnProgram": true,
+    "collapseNonConflictingChanges": true,
     "compressSimulationTable": true,
+    "showReasonForValue": true,
     "collapseConsecutiveConditions": true,
     "collapseOtherSteps": true,
     "autorun": true,
@@ -22,11 +28,18 @@
     "simulationRatio": 0.32,
     "simulationStepContentMaxWidth": 200,
     "valueAccuracy": 2,
-    "simulationStepDelay": 100
+    "simulationStepDelay": 0,
+    "simulationColumnOrder": [
+      "variable:Count",
+      "condition:is%20(Count%20%3D%3D%20N)%00Count%20%3D%3D%20N:0",
+      "output",
+      "variable:N",
+      "variable:Total"
+    ]
   },
   "shapes": [
     {
-      "id": "shape-20",
+      "id": "shape-58",
       "type": "terminator",
       "x": -80,
       "y": -360,
@@ -37,13 +50,13 @@
       "terminatorType": "start"
     },
     {
-      "id": "shape-21",
+      "id": "shape-59",
       "type": "input-output",
       "x": -80,
       "y": -240,
       "width": 180,
       "height": 80,
-      "text": "Input N",
+      "text": "Input\nN",
       "programCode": "",
       "variables": [
         {
@@ -54,7 +67,7 @@
       "inputOutputType": "input"
     },
     {
-      "id": "shape-22",
+      "id": "shape-60",
       "type": "initialization",
       "x": -80,
       "y": -120,
@@ -76,7 +89,7 @@
       ]
     },
     {
-      "id": "shape-23",
+      "id": "shape-61",
       "type": "process",
       "x": -70,
       "y": 0,
@@ -86,17 +99,17 @@
       "programCode": "Count = Count + 1\nTotal = Total + Count"
     },
     {
-      "id": "shape-24",
+      "id": "shape-62",
       "type": "decision",
-      "x": -91.88958644866943,
+      "x": -99.57887624353879,
       "y": 120,
-      "width": 203.77917289733887,
+      "width": 219.15775248707757,
       "height": 107.55834579467773,
-      "text": "is Count == N",
-      "programCode": "Count == N"
+      "text": "is (Count >= N)",
+      "programCode": "Count >= N"
     },
     {
-      "id": "shape-25",
+      "id": "shape-63",
       "type": "input-output",
       "x": -80,
       "y": 280,
@@ -107,7 +120,7 @@
       "inputOutputType": "output"
     },
     {
-      "id": "shape-26",
+      "id": "shape-64",
       "type": "terminator",
       "x": -80,
       "y": 400,
@@ -120,50 +133,50 @@
   ],
   "connections": [
     {
-      "from": "shape-20",
-      "to": "shape-21",
+      "from": "shape-58",
+      "to": "shape-59",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-21",
-      "to": "shape-22",
+      "from": "shape-59",
+      "to": "shape-60",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-22",
-      "to": "shape-23",
+      "from": "shape-60",
+      "to": "shape-61",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-23",
-      "to": "shape-24",
+      "from": "shape-61",
+      "to": "shape-62",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-24",
-      "to": "shape-23",
+      "from": "shape-62",
+      "to": "shape-61",
       "direction": "e",
       "role": "altNext",
       "label": "False"
     },
     {
-      "from": "shape-24",
-      "to": "shape-25",
+      "from": "shape-62",
+      "to": "shape-63",
       "direction": "s",
       "role": "next",
       "label": "True"
     },
     {
-      "from": "shape-25",
-      "to": "shape-26",
+      "from": "shape-63",
+      "to": "shape-64",
       "direction": "s",
       "role": "next",
       "label": ""
@@ -171,8 +184,8 @@
   ],
   "preview": {
     "mimeType": "image/svg+xml",
-    "data": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22239%22%20height%3D%22800%22%20viewBox%3D%220%200%20297.88958644866943%20996%22%20role%3D%22img%22%3E%3Crect%20width%3D%22297.88958644866943%22%20height%3D%22996%22%20fill%3D%22%23ffffff%22%2F%3E%3Cdefs%3E%3Cmarker%20id%3D%22preview-arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%2210%22%20refY%3D%225%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20markerUnits%3D%22userSpaceOnUse%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M%200%200.5%20L%2010%205%20L%200%209.5%20L%202.5%205%20z%22%20fill%3D%22%23475569%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Ctext%20x%3D%22148.94479322433472%22%20y%3D%2230%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3ESum%20of%20Numbers%3C%2Ftext%3E%3Ctext%20x%3D%22148.94479322433472%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20fill%3D%22%2364748b%22%3EInput%20a%20positive%20integer%20N.%20Compute%20and%20display%20the%20sum%20of%20all%20integers%20from%201%20to%20N.%3C%2Ftext%3E%3Cg%20transform%3D%22translate(127.88958644866943%20480)%22%3E%3Cpath%20d%3D%22M%2010%20-280%20L%2010%20-240%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%2010%20-160%20L%2010%20-120%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%2010%20-40%20L%2010%200%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%2010%2080%20L%2010%20120%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%20112%20174%20L%20126%20174%20Q%20134%20174%20134%20166%20L%20134%2048%20Q%20134%2040%20126%2040%20L%2090%2040%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Ctext%20x%3D%22134%22%20y%3D%22107%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2212%22%20fill%3D%22%23334155%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%225%22%20paint-order%3D%22stroke%22%3EFalse%3C%2Ftext%3E%3Cpath%20d%3D%22M%2010%20228%20L%2010%20280%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Ctext%20x%3D%2210%22%20y%3D%22254%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2212%22%20fill%3D%22%23334155%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%225%22%20paint-order%3D%22stroke%22%3ETrue%3C%2Ftext%3E%3Cpath%20d%3D%22M%2010%20360%20L%2010%20400%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-0%22%3E%3Crect%20x%3D%22-80%22%20y%3D%22-360%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20x%3D%22-80%22%20y%3D%22-360%22%20width%3D%22180%22%20height%3D%2280%22%20rx%3D%2240%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-0)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2210%22%20y%3D%22-320%22%20dominant-baseline%3D%22middle%22%3EStart%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-1%22%3E%3Crect%20x%3D%22-80%22%20y%3D%22-240%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22-58.400000000000006%2C-240%20100%2C-240%2078.4%2C-160%20-80%2C-160%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-1)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2210%22%20y%3D%22-200%22%20dominant-baseline%3D%22middle%22%3EInput%20N%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-2%22%3E%3Crect%20x%3D%22-80%22%20y%3D%22-120%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22-47.6%2C-120%2067.6%2C-120%20100%2C-80%2067.6%2C-40%20-47.6%2C-40%20-80%2C-80%22%20fill%3D%22%2314b8a6%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-2)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2210%22%20y%3D%22-89%22%20dominant-baseline%3D%22middle%22%3ETotal%20%3D%200%3C%2Ftext%3E%3Ctext%20x%3D%2210%22%20y%3D%22-71%22%20dominant-baseline%3D%22middle%22%3ECount%20%3D%200%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-3%22%3E%3Crect%20x%3D%22-70%22%20y%3D%220%22%20width%3D%22160%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20x%3D%22-70%22%20y%3D%220%22%20width%3D%22160%22%20height%3D%2280%22%20rx%3D%223%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-3)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2210%22%20y%3D%2222%22%20dominant-baseline%3D%22middle%22%3ECount%20%3D%20Count%20%2B%201%3C%2Ftext%3E%3Ctext%20x%3D%2210%22%20y%3D%2240%22%20dominant-baseline%3D%22middle%22%3ETotal%20%3D%20Total%20%2B%3C%2Ftext%3E%3Ctext%20x%3D%2210%22%20y%3D%2258%22%20dominant-baseline%3D%22middle%22%3ECount%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-4%22%3E%3Crect%20x%3D%22-91.88958644866943%22%20y%3D%22120%22%20width%3D%22203.77917289733887%22%20height%3D%22107.55834579467773%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%2210%2C120%20111.88958644866943%2C173.77917289733887%2010%2C227.55834579467773%20-91.88958644866943%2C173.77917289733887%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-4)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2210%22%20y%3D%22173.77917289733887%22%20dominant-baseline%3D%22middle%22%3Eis%20Count%20%3D%3D%20N%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-5%22%3E%3Crect%20x%3D%22-80%22%20y%3D%22280%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22-58.400000000000006%2C280%20100%2C280%2078.4%2C360%20-80%2C360%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-5)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2210%22%20y%3D%22311%22%20dominant-baseline%3D%22middle%22%3EPrint%3C%2Ftext%3E%3Ctext%20x%3D%2210%22%20y%3D%22329%22%20dominant-baseline%3D%22middle%22%3ETotal%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-6%22%3E%3Crect%20x%3D%22-80%22%20y%3D%22400%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20x%3D%22-80%22%20y%3D%22400%22%20width%3D%22180%22%20height%3D%2280%22%20rx%3D%2240%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-6)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2210%22%20y%3D%22440%22%20dominant-baseline%3D%22middle%22%3EEnd%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
-    "width": 239,
+    "data": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22251%22%20height%3D%22800%22%20viewBox%3D%220%200%20312.5788762435388%20996%22%20role%3D%22img%22%3E%3Crect%20width%3D%22312.5788762435388%22%20height%3D%22996%22%20fill%3D%22%23ffffff%22%2F%3E%3Cdefs%3E%3Cmarker%20id%3D%22preview-arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%2210%22%20refY%3D%225%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20markerUnits%3D%22userSpaceOnUse%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M%200%200.5%20L%2010%205%20L%200%209.5%20L%202.5%205%20z%22%20fill%3D%22%23475569%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Ctext%20x%3D%22156.2894381217694%22%20y%3D%2230%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E4.%20Sum%20of%20Numbers%3C%2Ftext%3E%3Ctext%20x%3D%22156.2894381217694%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20fill%3D%22%2364748b%22%3EInput%20a%20positive%20integer%20N.%20Compute%20and%20display%20the%20sum%20of%20all%20integers%20from%201%20to%20N.%3C%2Ftext%3E%3Cg%20transform%3D%22translate(135.5788762435388%20480)%22%3E%3Cpath%20d%3D%22M%2010%20-280%20L%2010%20-240%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%2010%20-160%20L%2010%20-120%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%2010%20-40%20L%2010%200%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%2010%2080%20L%2010%20100%20L%209.5%20100%20L%209.5%20120%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%20119%20174%20L%20133%20174%20Q%20141%20174%20141%20166%20L%20141%2048%20Q%20141%2040%20133%2040%20L%2090%2040%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Ctext%20x%3D%22141%22%20y%3D%22107%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2212%22%20fill%3D%22%23334155%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%225%22%20paint-order%3D%22stroke%22%3EFalse%3C%2Ftext%3E%3Cpath%20d%3D%22M%209.5%20228%20L%209.5%20258%20L%2010%20258%20L%2010%20280%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Ctext%20x%3D%229.5%22%20y%3D%22243%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2212%22%20fill%3D%22%23334155%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%225%22%20paint-order%3D%22stroke%22%3ETrue%3C%2Ftext%3E%3Cpath%20d%3D%22M%2010%20360%20L%2010%20400%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-0%22%3E%3Crect%20x%3D%22-80%22%20y%3D%22-360%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20x%3D%22-80%22%20y%3D%22-360%22%20width%3D%22180%22%20height%3D%2280%22%20rx%3D%2240%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-0)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2210%22%20y%3D%22-320%22%20dominant-baseline%3D%22middle%22%3EStart%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-1%22%3E%3Crect%20x%3D%22-80%22%20y%3D%22-240%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22-58.400000000000006%2C-240%20100%2C-240%2078.4%2C-160%20-80%2C-160%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-1)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2210%22%20y%3D%22-209%22%20dominant-baseline%3D%22middle%22%3EInput%3C%2Ftext%3E%3Ctext%20x%3D%2210%22%20y%3D%22-191%22%20dominant-baseline%3D%22middle%22%3EN%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-2%22%3E%3Crect%20x%3D%22-80%22%20y%3D%22-120%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22-47.6%2C-120%2067.6%2C-120%20100%2C-80%2067.6%2C-40%20-47.6%2C-40%20-80%2C-80%22%20fill%3D%22%2314b8a6%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-2)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2210%22%20y%3D%22-89%22%20dominant-baseline%3D%22middle%22%3ETotal%20%3D%200%3C%2Ftext%3E%3Ctext%20x%3D%2210%22%20y%3D%22-71%22%20dominant-baseline%3D%22middle%22%3ECount%20%3D%200%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-3%22%3E%3Crect%20x%3D%22-70%22%20y%3D%220%22%20width%3D%22160%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20x%3D%22-70%22%20y%3D%220%22%20width%3D%22160%22%20height%3D%2280%22%20rx%3D%223%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-3)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2210%22%20y%3D%2222%22%20dominant-baseline%3D%22middle%22%3ECount%20%3D%20Count%20%2B%201%3C%2Ftext%3E%3Ctext%20x%3D%2210%22%20y%3D%2240%22%20dominant-baseline%3D%22middle%22%3ETotal%20%3D%20Total%20%2B%3C%2Ftext%3E%3Ctext%20x%3D%2210%22%20y%3D%2258%22%20dominant-baseline%3D%22middle%22%3ECount%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-4%22%3E%3Crect%20x%3D%22-99.57887624353879%22%20y%3D%22120%22%20width%3D%22219.15775248707757%22%20height%3D%22107.55834579467773%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%2210%2C120%20119.57887624353879%2C173.77917289733887%2010%2C227.55834579467773%20-99.57887624353879%2C173.77917289733887%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-4)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2210%22%20y%3D%22173.77917289733887%22%20dominant-baseline%3D%22middle%22%3Eis%20(Count%20%26gt%3B%3D%20N)%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-5%22%3E%3Crect%20x%3D%22-80%22%20y%3D%22280%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22-58.400000000000006%2C280%20100%2C280%2078.4%2C360%20-80%2C360%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-5)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2210%22%20y%3D%22311%22%20dominant-baseline%3D%22middle%22%3EPrint%3C%2Ftext%3E%3Ctext%20x%3D%2210%22%20y%3D%22329%22%20dominant-baseline%3D%22middle%22%3ETotal%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-6%22%3E%3Crect%20x%3D%22-80%22%20y%3D%22400%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20x%3D%22-80%22%20y%3D%22400%22%20width%3D%22180%22%20height%3D%2280%22%20rx%3D%2240%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-6)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2210%22%20y%3D%22440%22%20dominant-baseline%3D%22middle%22%3EEnd%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
+    "width": 251,
     "height": 800
   }
 }
