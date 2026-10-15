@@ -318,7 +318,7 @@ async function loadFlowcharts(selected = "Sequence") {
         const flowchartIndex = await response.json();
         flowchartIndex.forEach((title, index) => {
             let url = `${baseUrl}/${index + 1}.png`
-            if (selected == "Iteration") {
+            if (selected != "Selection") {
                 const jsonUrl = `https://liamang.github.io/${baseUrl}/${index + 1}.json`;
                 url = `https://liamang.github.io/flowcraft/?hideSettings&url=${jsonUrl}`
             }

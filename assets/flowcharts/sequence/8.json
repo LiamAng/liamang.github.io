@@ -1,0 +1,139 @@
+{
+  "version": 1,
+  "settings": {
+    "title": "8. Rectangle Measures",
+    "description": "Input length an width. Compute and display the area an perimeter of a rectangle.",
+    "decisionBranchLabels": "true-false",
+    "readOnly": true,
+    "snap": false,
+    "snapResizeToGrid": false,
+    "gridSize": 40,
+    "guides": true,
+    "showGrid": true,
+    "showSteps": false,
+    "hideSteps": true,
+    "showStepNumbers": false,
+    "showShapeContentInSteps": true,
+    "processContentAsCode": false,
+    "setShapeContentBasedOnProgram": false,
+    "collapseNonConflictingChanges": true,
+    "compressSimulationTable": true,
+    "showReasonForValue": true,
+    "collapseConsecutiveConditions": true,
+    "collapseOtherSteps": true,
+    "hideOutputColumnIfSingleOutput": false,
+    "collapsedInputOutputValueTiming": "first",
+    "autorun": true,
+    "inputs": {
+      "Width": 6,
+      "Length": 7
+    },
+    "simulationRatio": 0.4,
+    "simulationStepContentMaxWidth": 200,
+    "valueAccuracy": 2,
+    "simulationStepDelay": 0,
+    "simulationColumnOrder": []
+  },
+  "shapes": [
+    {
+      "id": "shape-1",
+      "type": "terminator",
+      "x": -63.7166748046875,
+      "y": -406,
+      "width": 180,
+      "height": 80,
+      "text": "Start",
+      "programCode": "",
+      "terminatorType": "start"
+    },
+    {
+      "id": "shape-2",
+      "type": "input-output",
+      "x": -63.7166748046875,
+      "y": -279,
+      "width": 180,
+      "height": 80,
+      "text": "Input\nLength, Width",
+      "programCode": "",
+      "variables": [
+        {
+          "name": "Length",
+          "type": "number"
+        },
+        {
+          "name": "Width",
+          "type": "number"
+        }
+      ],
+      "inputOutputType": "input"
+    },
+    {
+      "id": "shape-3",
+      "type": "process",
+      "x": -109.10421752929688,
+      "y": -170.1937713623047,
+      "width": 270.77508544921875,
+      "height": 82.38754272460938,
+      "text": "Area = Length * Width\nPerimeter = 2 * (Length + Width)",
+      "programCode": "let Area = Length * Width\nlet Perimeter = 2 * (Length + Width)"
+    },
+    {
+      "id": "shape-4",
+      "type": "input-output",
+      "x": -158.35417938232422,
+      "y": -68.61666870117188,
+      "width": 369.27500915527344,
+      "height": 83.23333740234375,
+      "text": "Print\n\"Area: \" + Area + \", Perimeter: \" + Perimeter",
+      "programCode": "\"Area: \" + Area + \", Perimeter\" + Perimeter",
+      "inputOutputType": "output"
+    },
+    {
+      "id": "shape-5",
+      "type": "terminator",
+      "x": -63.7166748046875,
+      "y": 50,
+      "width": 180,
+      "height": 80,
+      "text": "End",
+      "programCode": "",
+      "terminatorType": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from": "shape-1",
+      "to": "shape-2",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-2",
+      "to": "shape-3",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-3",
+      "to": "shape-4",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-4",
+      "to": "shape-5",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    }
+  ],
+  "preview": {
+    "mimeType": "image/svg+xml",
+    "data": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22441%22%20height%3D%22692%22%20viewBox%3D%220%200%20441.27500915527344%20692%22%20role%3D%22img%22%3E%3Crect%20width%3D%22441.27500915527344%22%20height%3D%22692%22%20fill%3D%22%23ffffff%22%2F%3E%3Cdefs%3E%3Cmarker%20id%3D%22preview-arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%2210%22%20refY%3D%225%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20markerUnits%3D%22userSpaceOnUse%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M%200%200.5%20L%2010%205%20L%200%209.5%20L%202.5%205%20z%22%20fill%3D%22%23475569%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Ctext%20x%3D%22220.63750457763672%22%20y%3D%2230%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E8.%20Rectangle%20Measures%3C%2Ftext%3E%3Ctext%20x%3D%22220.63750457763672%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20fill%3D%22%2364748b%22%3EInput%20length%20an%20width.%20Compute%20and%20display%20the%20area%20an%20perimeter%20of%20a%20rectangle.%3C%2Ftext%3E%3Cg%20transform%3D%22translate(194.35417938232422%20526)%22%3E%3Cpath%20d%3D%22M%2026.2833251953125%20-326%20L%2026.2833251953125%20-279%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%2026.2833251953125%20-199%20L%2026.2833251953125%20-170.1937713623047%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%2026.2833251953125%20-87.80622863769531%20L%2026.2833251953125%20-68.61666870117188%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%2026.2833251953125%2014.616668701171875%20L%2026.2833251953125%2050%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-0%22%3E%3Crect%20x%3D%22-63.7166748046875%22%20y%3D%22-406%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20x%3D%22-63.7166748046875%22%20y%3D%22-406%22%20width%3D%22180%22%20height%3D%2280%22%20rx%3D%2240%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-0)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2226.2833251953125%22%20y%3D%22-366%22%20dominant-baseline%3D%22middle%22%3EStart%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-1%22%3E%3Crect%20x%3D%22-63.7166748046875%22%20y%3D%22-279%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22-42.116674804687506%2C-279%20116.2833251953125%2C-279%2094.6833251953125%2C-199%20-63.7166748046875%2C-199%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-1)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2226.2833251953125%22%20y%3D%22-248%22%20dominant-baseline%3D%22middle%22%3EInput%3C%2Ftext%3E%3Ctext%20x%3D%2226.2833251953125%22%20y%3D%22-230%22%20dominant-baseline%3D%22middle%22%3ELength%2C%20Width%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-2%22%3E%3Crect%20x%3D%22-109.10421752929688%22%20y%3D%22-170.1937713623047%22%20width%3D%22270.77508544921875%22%20height%3D%2282.38754272460938%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20x%3D%22-109.10421752929688%22%20y%3D%22-170.1937713623047%22%20width%3D%22270.77508544921875%22%20height%3D%2282.38754272460938%22%20rx%3D%223%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-2)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2226.2833251953125%22%20y%3D%22-147%22%20dominant-baseline%3D%22middle%22%3EArea%20%3D%20Length%20*%20Width%3C%2Ftext%3E%3Ctext%20x%3D%2226.2833251953125%22%20y%3D%22-129%22%20dominant-baseline%3D%22middle%22%3EPerimeter%20%3D%202%20*%20(Length%20%2B%3C%2Ftext%3E%3Ctext%20x%3D%2226.2833251953125%22%20y%3D%22-111%22%20dominant-baseline%3D%22middle%22%3EWidth)%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-3%22%3E%3Crect%20x%3D%22-158.35417938232422%22%20y%3D%22-68.61666870117188%22%20width%3D%22369.27500915527344%22%20height%3D%2283.23333740234375%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22-114.04117828369141%2C-68.61666870117188%20210.92082977294922%2C-68.61666870117188%20166.6078286743164%2C14.616668701171875%20-158.35417938232422%2C14.616668701171875%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-3)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2226.2833251953125%22%20y%3D%22-45%22%20dominant-baseline%3D%22middle%22%3EPrint%3C%2Ftext%3E%3Ctext%20x%3D%2226.2833251953125%22%20y%3D%22-27%22%20dominant-baseline%3D%22middle%22%3E%26quot%3BArea%3A%20%26quot%3B%20%2B%20Area%20%2B%20%26quot%3B%2C%20Perimeter%3A%20%26quot%3B%20%2B%3C%2Ftext%3E%3Ctext%20x%3D%2226.2833251953125%22%20y%3D%22-9%22%20dominant-baseline%3D%22middle%22%3EPerimeter%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-4%22%3E%3Crect%20x%3D%22-63.7166748046875%22%20y%3D%2250%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20x%3D%22-63.7166748046875%22%20y%3D%2250%22%20width%3D%22180%22%20height%3D%2280%22%20rx%3D%2240%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-4)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%2226.2833251953125%22%20y%3D%2290%22%20dominant-baseline%3D%22middle%22%3EEnd%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
+    "width": 441,
+    "height": 692
+  }
+}
