@@ -4,7 +4,7 @@
     "title": "10. Triangle Measures",
     "description": "Input base, height, and sides. Compute and display the area and perimeter of a triangle",
     "decisionBranchLabels": "true-false",
-    "readOnly": false,
+    "readOnly": true,
     "snap": false,
     "snapResizeToGrid": false,
     "gridSize": 40,
@@ -35,11 +35,20 @@
     "simulationStepContentMaxWidth": 200,
     "valueAccuracy": 2,
     "simulationStepDelay": 0,
-    "simulationColumnOrder": []
+    "simulationColumnOrder": [
+      "variable:Base",
+      "variable:Height",
+      "variable:Side1",
+      "variable:Side2",
+      "variable:Side3",
+      "variable:Area",
+      "variable:Perimeter",
+      "output"
+    ]
   },
   "shapes": [
     {
-      "id": "shape-1",
+      "id": "shape-164",
       "type": "terminator",
       "x": -140.7166748046875,
       "y": -420.1000061035156,
@@ -50,7 +59,7 @@
       "terminatorType": "start"
     },
     {
-      "id": "shape-2",
+      "id": "shape-165",
       "type": "input-output",
       "x": -140.7166748046875,
       "y": -303.1000061035156,
@@ -83,7 +92,7 @@
       "inputOutputType": "input"
     },
     {
-      "id": "shape-3",
+      "id": "shape-166",
       "type": "process",
       "x": -209.7166748046875,
       "y": -198.10000610351562,
@@ -93,7 +102,7 @@
       "programCode": "let Area = (Base * Height) + 2\nlet Perimeter = Side1 + Side2 + Side3"
     },
     {
-      "id": "shape-4",
+      "id": "shape-167",
       "type": "input-output",
       "x": -244.71258926391602,
       "y": -95.09819030761719,
@@ -104,7 +113,7 @@
       "inputOutputType": "output"
     },
     {
-      "id": "shape-5",
+      "id": "shape-168",
       "type": "terminator",
       "x": -140.7166748046875,
       "y": 22.899993896484375,
@@ -117,29 +126,29 @@
   ],
   "connections": [
     {
-      "from": "shape-1",
-      "to": "shape-2",
+      "from": "shape-164",
+      "to": "shape-165",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-2",
-      "to": "shape-3",
+      "from": "shape-165",
+      "to": "shape-166",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-3",
-      "to": "shape-4",
+      "from": "shape-166",
+      "to": "shape-167",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-4",
-      "to": "shape-5",
+      "from": "shape-167",
+      "to": "shape-168",
       "direction": "s",
       "role": "next",
       "label": ""

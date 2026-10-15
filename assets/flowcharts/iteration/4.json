@@ -4,7 +4,7 @@
     "title": "4. Sum of Numbers",
     "description": "Input a positive integer N. Compute and display the sum of all integers from 1 to N.",
     "decisionBranchLabels": "true-false",
-    "readOnly": false,
+    "readOnly": true,
     "snap": true,
     "snapResizeToGrid": false,
     "gridSize": 40,

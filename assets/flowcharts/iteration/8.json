@@ -4,7 +4,7 @@
     "title": "8. Count Positive and Negative Numbers",
     "description": "Input ten numbers. Count and display how many are positive, negative, and zero.",
     "decisionBranchLabels": "true-false",
-    "readOnly": false,
+    "readOnly": true,
     "snap": true,
     "snapResizeToGrid": false,
     "gridSize": 40,

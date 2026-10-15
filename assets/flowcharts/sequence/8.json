@@ -32,11 +32,17 @@
     "simulationStepContentMaxWidth": 200,
     "valueAccuracy": 2,
     "simulationStepDelay": 0,
-    "simulationColumnOrder": []
+    "simulationColumnOrder": [
+      "variable:Length",
+      "variable:Width",
+      "variable:Area",
+      "variable:Perimeter",
+      "output"
+    ]
   },
   "shapes": [
     {
-      "id": "shape-1",
+      "id": "shape-194",
       "type": "terminator",
       "x": -63.7166748046875,
       "y": -406,
@@ -47,7 +53,7 @@
       "terminatorType": "start"
     },
     {
-      "id": "shape-2",
+      "id": "shape-195",
       "type": "input-output",
       "x": -63.7166748046875,
       "y": -279,
@@ -68,7 +74,7 @@
       "inputOutputType": "input"
     },
     {
-      "id": "shape-3",
+      "id": "shape-196",
       "type": "process",
       "x": -109.10421752929688,
       "y": -170.1937713623047,
@@ -78,18 +84,18 @@
       "programCode": "let Area = Length * Width\nlet Perimeter = 2 * (Length + Width)"
     },
     {
-      "id": "shape-4",
+      "id": "shape-197",
       "type": "input-output",
       "x": -158.35417938232422,
       "y": -68.61666870117188,
       "width": 369.27500915527344,
       "height": 83.23333740234375,
       "text": "Print\n\"Area: \" + Area + \", Perimeter: \" + Perimeter",
-      "programCode": "\"Area: \" + Area + \", Perimeter\" + Perimeter",
+      "programCode": "\"Area: \" + Area + \", Perimeter: \" + Perimeter",
       "inputOutputType": "output"
     },
     {
-      "id": "shape-5",
+      "id": "shape-198",
       "type": "terminator",
       "x": -63.7166748046875,
       "y": 50,
@@ -102,29 +108,29 @@
   ],
   "connections": [
     {
-      "from": "shape-1",
-      "to": "shape-2",
+      "from": "shape-194",
+      "to": "shape-195",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-2",
-      "to": "shape-3",
+      "from": "shape-195",
+      "to": "shape-196",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-3",
-      "to": "shape-4",
+      "from": "shape-196",
+      "to": "shape-197",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-4",
-      "to": "shape-5",
+      "from": "shape-197",
+      "to": "shape-198",
       "direction": "s",
       "role": "next",
       "label": ""

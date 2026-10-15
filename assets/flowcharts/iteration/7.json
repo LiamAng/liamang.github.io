@@ -4,7 +4,7 @@
     "title": "7. Grade Average",
     "description": "Input five grades. Compute and display their total and average.",
     "decisionBranchLabels": "true-false",
-    "readOnly": false,
+    "readOnly": true,
     "snap": true,
     "snapResizeToGrid": false,
     "gridSize": 40,

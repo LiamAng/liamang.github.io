@@ -24,16 +24,23 @@
     "hideOutputColumnIfSingleOutput": false,
     "collapsedInputOutputValueTiming": "first",
     "autorun": true,
-    "inputs": {},
+    "inputs": {
+      "N": 9
+    },
     "simulationRatio": 0.32,
     "simulationStepContentMaxWidth": 200,
     "valueAccuracy": 2,
     "simulationStepDelay": 0,
-    "simulationColumnOrder": []
+    "simulationColumnOrder": [
+      "variable:N",
+      "variable:Square",
+      "variable:Cube",
+      "output"
+    ]
   },
   "shapes": [
     {
-      "id": "shape-20",
+      "id": "shape-184",
       "type": "terminator",
       "x": -128.7166748046875,
       "y": -439,
@@ -44,7 +51,7 @@
       "terminatorType": "start"
     },
     {
-      "id": "shape-21",
+      "id": "shape-185",
       "type": "input-output",
       "x": -128.7166748046875,
       "y": -319,
@@ -61,7 +68,7 @@
       "inputOutputType": "input"
     },
     {
-      "id": "shape-22",
+      "id": "shape-186",
       "type": "process",
       "x": -118.7166748046875,
       "y": -206,
@@ -71,7 +78,7 @@
       "programCode": "let Square = N * N\nlet Cube = N * N * N"
     },
     {
-      "id": "shape-23",
+      "id": "shape-187",
       "type": "input-output",
       "x": -228.7166748046875,
       "y": -98,
@@ -82,7 +89,7 @@
       "inputOutputType": "output"
     },
     {
-      "id": "shape-24",
+      "id": "shape-188",
       "type": "terminator",
       "x": -128.7166748046875,
       "y": 6,
@@ -95,29 +102,29 @@
   ],
   "connections": [
     {
-      "from": "shape-20",
-      "to": "shape-21",
+      "from": "shape-184",
+      "to": "shape-185",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-21",
-      "to": "shape-22",
+      "from": "shape-185",
+      "to": "shape-186",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-22",
-      "to": "shape-23",
+      "from": "shape-186",
+      "to": "shape-187",
       "direction": "s",
       "role": "next",
       "label": ""
     },
     {
-      "from": "shape-23",
-      "to": "shape-24",
+      "from": "shape-187",
+      "to": "shape-188",
       "direction": "s",
       "role": "next",
       "label": ""

@@ -4,7 +4,7 @@
     "title": "9. Circle Measures",
     "description": "Input the diameter of a circle. Computer and display the area and circumference.",
     "decisionBranchLabels": "true-false",
-    "readOnly": false,
+    "readOnly": true,
     "snap": false,
     "snapResizeToGrid": false,
     "gridSize": 40,
