@@ -98,7 +98,7 @@
       "width": 315.3761612976559,
       "height": 109.00010271916472,
       "text": "Is\n(n1<=n2 && n1<=n3)",
-      "programCode": "(n1<=n2 && n1<=n3)"
+      "programCode": "n1<=n2 && n1<=n3"
     },
     {
       "id": "shape-15",
@@ -107,8 +107,8 @@
       "y": -137.30005441134017,
       "width": 307.000057220459,
       "height": 109.00010271916472,
-      "text": "Is\n(n2<=n3 &&  n2<=n1)",
-      "programCode": "(n2<=n3 &&  n2<=n1)"
+      "text": "Is\n(n2<=n3 && n2<=n1)",
+      "programCode": "n2<=n3 && n2<=n1"
     },
     {
       "id": "shape-17",
