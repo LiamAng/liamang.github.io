@@ -1,0 +1,240 @@
+{
+  "version": 1,
+  "settings": {
+    "title": "2. Positive, Negative or Neutral",
+    "description": "Create a flowchart that will input for a number then identify whether the number is positive or negative.",
+    "decisionBranchLabels": "true-false",
+    "readOnly": true,
+    "snap": false,
+    "snapResizeToGrid": false,
+    "gridSize": 40,
+    "guides": true,
+    "showGrid": true,
+    "showSteps": false,
+    "hideSteps": true,
+    "showStepNumbers": false,
+    "showShapeContentInSteps": true,
+    "processContentAsCode": true,
+    "setShapeContentBasedOnProgram": true,
+    "collapseNonConflictingChanges": true,
+    "compressSimulationTable": true,
+    "showReasonForValue": true,
+    "collapseConsecutiveConditions": true,
+    "collapseOtherSteps": true,
+    "hideOutputColumnIfSingleOutput": false,
+    "collapsedInputOutputValueTiming": "first",
+    "autorun": true,
+    "inputs": {
+      "Num": 0
+    },
+    "inputSets": [
+      {
+        "name": "Case 1",
+        "inputs": {
+          "Num": 0
+        }
+      },
+      {
+        "name": "Case 2",
+        "inputs": {
+          "Num": 6
+        }
+      },
+      {
+        "name": "Case 3",
+        "inputs": {
+          "Num": -7
+        }
+      }
+    ],
+    "simulationRatio": 0.32,
+    "simulationStepContentMaxWidth": 200,
+    "valueAccuracy": 2,
+    "simulationStepDelay": 0,
+    "simulationColumnOrder": [
+      "condition:Is%20(Num%20%3C%200)%00Num%20%3C%200:0",
+      "variable:Num",
+      "condition:Is%20(Num%20%3E%200)%00Num%20%3E%200:0",
+      "output"
+    ]
+  },
+  "shapes": [
+    {
+      "id": "shape-50",
+      "type": "terminator",
+      "x": -162.79998779296875,
+      "y": -437.5,
+      "width": 180,
+      "height": 80,
+      "text": "Start",
+      "programCode": "",
+      "terminatorType": "start"
+    },
+    {
+      "id": "shape-51",
+      "type": "input-output",
+      "x": -162.79998779296875,
+      "y": -320.5,
+      "width": 180,
+      "height": 80,
+      "text": "Input\nNum",
+      "programCode": "",
+      "variables": [
+        {
+          "name": "Num",
+          "type": "number"
+        }
+      ],
+      "inputOutputType": "input"
+    },
+    {
+      "id": "shape-52",
+      "type": "decision",
+      "x": -162.79998779296875,
+      "y": -195.5,
+      "width": 180,
+      "height": 100,
+      "text": "Is (Num > 0)",
+      "programCode": "Num > 0"
+    },
+    {
+      "id": "shape-53",
+      "type": "decision",
+      "x": 93.20001220703125,
+      "y": -195.5,
+      "width": 178,
+      "height": 100,
+      "text": "Is (Num < 0)",
+      "programCode": "Num < 0"
+    },
+    {
+      "id": "shape-54",
+      "type": "input-output",
+      "x": -162.79998779296875,
+      "y": -21.5,
+      "width": 180,
+      "height": 80,
+      "text": "Output\n\"Positive\"",
+      "programCode": "\"Positive\"",
+      "inputOutputType": "output"
+    },
+    {
+      "id": "shape-55",
+      "type": "input-output",
+      "x": 92.20001220703125,
+      "y": -21.5,
+      "width": 180,
+      "height": 80,
+      "text": "Output\n\"Negative\"",
+      "programCode": "\"Negative\"",
+      "inputOutputType": "output"
+    },
+    {
+      "id": "shape-56",
+      "type": "input-output",
+      "x": 306.20001220703125,
+      "y": -21.5,
+      "width": 180,
+      "height": 80,
+      "text": "Output\n\"Neutral\"",
+      "programCode": "\"Neutral\"",
+      "inputOutputType": "output"
+    },
+    {
+      "id": "shape-57",
+      "type": "terminator",
+      "x": -162.79998779296875,
+      "y": 103.5,
+      "width": 180,
+      "height": 80,
+      "text": "End",
+      "programCode": "",
+      "terminatorType": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from": "shape-50",
+      "to": "shape-51",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-51",
+      "to": "shape-52",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-52",
+      "to": "shape-53",
+      "direction": "e",
+      "role": "altNext",
+      "label": "True"
+    },
+    {
+      "from": "shape-52",
+      "to": "shape-54",
+      "direction": "s",
+      "role": "next",
+      "label": "False",
+      "waypoints": [
+        {
+          "ox": -0.20001220703125,
+          "oy": 79.625,
+          "dir": "s"
+        }
+      ]
+    },
+    {
+      "from": "shape-53",
+      "to": "shape-55",
+      "direction": "s",
+      "role": "next",
+      "label": "True",
+      "waypoints": [
+        {
+          "ox": -0.20001220703125,
+          "oy": 68.125,
+          "dir": "s"
+        }
+      ]
+    },
+    {
+      "from": "shape-53",
+      "to": "shape-56",
+      "direction": "e",
+      "role": "altNext",
+      "label": "False"
+    },
+    {
+      "from": "shape-54",
+      "to": "shape-57",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-55",
+      "to": "shape-57",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    },
+    {
+      "from": "shape-56",
+      "to": "shape-57",
+      "direction": "s",
+      "role": "next",
+      "label": ""
+    }
+  ],
+  "preview": {
+    "mimeType": "image/svg+xml",
+    "data": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22721%22%20height%3D%22799%22%20viewBox%3D%220%200%20721%20799%22%20role%3D%22img%22%3E%3Crect%20width%3D%22721%22%20height%3D%22799%22%20fill%3D%22%23ffffff%22%2F%3E%3Cdefs%3E%3Cmarker%20id%3D%22preview-arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%2210%22%20refY%3D%225%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20markerUnits%3D%22userSpaceOnUse%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M%200%200.5%20L%2010%205%20L%200%209.5%20L%202.5%205%20z%22%20fill%3D%22%23475569%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Ctext%20x%3D%22360.5%22%20y%3D%2230%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E2.%20Positive%2C%20Negative%20or%20Neutral%3C%2Ftext%3E%3Ctext%20x%3D%22360.5%22%20y%3D%2264%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20fill%3D%22%2364748b%22%3ECreate%20a%20flowchart%20that%20will%20input%20for%20a%20number%20then%20identify%20whether%20the%20number%20is%20positive%20or%20negative.%3C%2Ftext%3E%3Cg%20transform%3D%22translate(198.79998779296875%20557.5)%22%3E%3Cpath%20d%3D%22M%20-72.79998779296875%20-357.5%20L%20-72.79998779296875%20-320.5%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%20-72.79998779296875%20-240.5%20L%20-72.8%20-218.25%20L%20-73%20-218.25%20L%20-73%20-196%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%2017%20-146%20L%2093%20-146%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Ctext%20x%3D%2255%22%20y%3D%22-146%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2212%22%20fill%3D%22%23334155%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%225%22%20paint-order%3D%22stroke%22%3EFalse%3C%2Ftext%3E%3Cpath%20d%3D%22M%20-73%20-96%20L%20-73%20-43.69%20L%20-72.8%20-43.69%20L%20-72.79998779296875%20-21.5%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Ctext%20x%3D%22-73%22%20y%3D%22-69.845%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2212%22%20fill%3D%22%23334155%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%225%22%20paint-order%3D%22stroke%22%3ETrue%3C%2Ftext%3E%3Cpath%20d%3D%22M%20182%20-96%20L%20182%20-43.5%20L%20182.2%20-43.5%20L%20182.20001220703125%20-21.5%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Ctext%20x%3D%22182%22%20y%3D%22-69.75%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2212%22%20fill%3D%22%23334155%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%225%22%20paint-order%3D%22stroke%22%3ETrue%3C%2Ftext%3E%3Cpath%20d%3D%22M%20271%20-146%20L%20388.2%20-146%20Q%20396.2%20-146%20396.20000078438756%20-138.00000000000003%20L%20396.20001220703125%20-21.5%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Ctext%20x%3D%22333.6%22%20y%3D%22-146%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2212%22%20fill%3D%22%23334155%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%225%22%20paint-order%3D%22stroke%22%3EFalse%3C%2Ftext%3E%3Cpath%20d%3D%22M%20-72.79998779296875%2058.5%20L%20-72.79998779296875%20103.5%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%20182.20001220703125%2058.5%20L%20182.20000114889706%20135.50000000000009%20Q%20182.2%20143.5%20174.2%20143.5%20L%2017.20001220703125%20143.5%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cpath%20d%3D%22M%20396.20001220703125%2058.5%20L%20396.20000066432823%20197.50000000000003%20Q%20396.2%20205.5%20388.2%20205.5%20L%20-64.8%20205.5%20Q%20-72.8%20205.5%20-72.79999556107954%20197.50000000000122%20L%20-72.79998779296875%20183.5%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%221.75%22%20stroke-linejoin%3D%22round%22%20marker-end%3D%22url(%23preview-arrow)%22%2F%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-0%22%3E%3Crect%20x%3D%22-162.79998779296875%22%20y%3D%22-437.5%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20x%3D%22-162.79998779296875%22%20y%3D%22-437.5%22%20width%3D%22180%22%20height%3D%2280%22%20rx%3D%2240%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-0)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22-72.79998779296875%22%20y%3D%22-397.5%22%20dominant-baseline%3D%22middle%22%3EStart%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-1%22%3E%3Crect%20x%3D%22-162.79998779296875%22%20y%3D%22-320.5%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22-141.19998779296876%2C-320.5%2017.20001220703125%2C-320.5%20-4.399987792968748%2C-240.5%20-162.79998779296875%2C-240.5%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-1)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22-72.79998779296875%22%20y%3D%22-289.5%22%20dominant-baseline%3D%22middle%22%3EInput%3C%2Ftext%3E%3Ctext%20x%3D%22-72.79998779296875%22%20y%3D%22-271.5%22%20dominant-baseline%3D%22middle%22%3ENum%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-2%22%3E%3Crect%20x%3D%22-162.79998779296875%22%20y%3D%22-195.5%22%20width%3D%22180%22%20height%3D%22100%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22-72.79998779296875%2C-195.5%2017.20001220703125%2C-145.5%20-72.79998779296875%2C-95.5%20-162.79998779296875%2C-145.5%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-2)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22-72.79998779296875%22%20y%3D%22-145.5%22%20dominant-baseline%3D%22middle%22%3EIs%20(Num%20%26gt%3B%200)%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-3%22%3E%3Crect%20x%3D%2293.20001220703125%22%20y%3D%22-195.5%22%20width%3D%22178%22%20height%3D%22100%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22182.20001220703125%2C-195.5%20271.20001220703125%2C-145.5%20182.20001220703125%2C-95.5%2093.20001220703125%2C-145.5%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-3)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22182.20001220703125%22%20y%3D%22-145.5%22%20dominant-baseline%3D%22middle%22%3EIs%20(Num%20%26lt%3B%200)%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-4%22%3E%3Crect%20x%3D%22-162.79998779296875%22%20y%3D%22-21.5%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22-141.19998779296876%2C-21.5%2017.20001220703125%2C-21.5%20-4.399987792968748%2C58.5%20-162.79998779296875%2C58.5%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-4)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22-72.79998779296875%22%20y%3D%229.5%22%20dominant-baseline%3D%22middle%22%3EOutput%3C%2Ftext%3E%3Ctext%20x%3D%22-72.79998779296875%22%20y%3D%2227.5%22%20dominant-baseline%3D%22middle%22%3E%26quot%3BPositive%26quot%3B%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-5%22%3E%3Crect%20x%3D%2292.20001220703125%22%20y%3D%22-21.5%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22113.80001220703124%2C-21.5%20272.20001220703125%2C-21.5%20250.60001220703126%2C58.5%2092.20001220703125%2C58.5%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-5)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22182.20001220703125%22%20y%3D%229.5%22%20dominant-baseline%3D%22middle%22%3EOutput%3C%2Ftext%3E%3Ctext%20x%3D%22182.20001220703125%22%20y%3D%2227.5%22%20dominant-baseline%3D%22middle%22%3E%26quot%3BNegative%26quot%3B%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-6%22%3E%3Crect%20x%3D%22306.20001220703125%22%20y%3D%22-21.5%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%22327.8000122070313%2C-21.5%20486.20001220703125%2C-21.5%20464.6000122070312%2C58.5%20306.20001220703125%2C58.5%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-6)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22396.20001220703125%22%20y%3D%229.5%22%20dominant-baseline%3D%22middle%22%3EOutput%3C%2Ftext%3E%3Ctext%20x%3D%22396.20001220703125%22%20y%3D%2227.5%22%20dominant-baseline%3D%22middle%22%3E%26quot%3BNeutral%26quot%3B%3C%2Ftext%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22preview-shape-7%22%3E%3Crect%20x%3D%22-162.79998779296875%22%20y%3D%22103.5%22%20width%3D%22180%22%20height%3D%2280%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20x%3D%22-162.79998779296875%22%20y%3D%22103.5%22%20width%3D%22180%22%20height%3D%2280%22%20rx%3D%2240%22%20fill%3D%22%236495ed%22%2F%3E%3Cg%20clip-path%3D%22url(%23preview-shape-7)%22%20fill%3D%22%23ffffff%22%20font-family%3D%22system-ui%2C%20sans-serif%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3E%3Ctext%20x%3D%22-72.79998779296875%22%20y%3D%22143.5%22%20dominant-baseline%3D%22middle%22%3EEnd%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
+    "width": 721,
+    "height": 799
+  }
+}

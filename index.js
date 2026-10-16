@@ -318,7 +318,7 @@ async function loadFlowcharts(selected = "Sequence") {
         const flowchartIndex = await response.json();
         flowchartIndex.forEach((title, index) => {
             let url = `${baseUrl}/${index + 1}.png`
-            if (selected != "Selection") {
+            if (!(selected == "Selection" && index > 5)) {
                 const jsonUrl = `https://liamang.github.io/${baseUrl}/${index + 1}.json`;
                 url = `https://liamang.github.io/flowcraft/?hideSettings&url=${jsonUrl}`
             }
@@ -415,7 +415,7 @@ function showPage(url, onback) {
     page.style.display = "flex";
     const subWindow = document.getElementById("subwindow");
     subWindow.src = url;
-    page.querySelector(".mc-button").onclick = () => {
+    page.querySelector(".back-button").onclick = () => {
         subWindow.src = "";
         onback()
         page.style.display = "none";

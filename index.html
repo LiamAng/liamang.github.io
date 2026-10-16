@@ -337,8 +337,8 @@
         border-image-repeat: stretch;
       }
     }
-
-    #menu-options {
+    #menu-options,
+    .menu-options {
       max-width: 90vw;
       & > * + * {
         margin-top: 5px;
@@ -576,6 +576,10 @@
         <iframe id="subwindow" scrolling="no" frameborder="0" style="position: relative; width: 100%; height: 100%; background-color: white;"></iframe>
       </div>
       <div class="footer-separator"></div>
+      <div class="menu-options">
+        <button class="mc-button" id="prev">Previous</button>
+        <button class="mc-button"id="next">Next</button>
+      </div>
       <button class="mc-button back-button">Back</button>
   </div>
 
